@@ -163,7 +163,7 @@
         )
         .then(data => {
 
-          if(data && data.url)
+          if(data && data.actividad && data.actividad.url)
           {
             location.href=data.actividad.url;
           }
