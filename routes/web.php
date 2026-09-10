@@ -5,9 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\UsuarioController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/logout', [UsuarioController::class, "logout"]);
 
@@ -15,6 +12,9 @@ Route::get('/me', [RegistroController::class, "me"]);
 
 Route::get('/ok', function () {
     return view('bienvenido');
+});
+Route::get('/', function () {
+    return view('principal');
 });
 
 Route::get('/correo', [RegistroController::class, "correo"]);
