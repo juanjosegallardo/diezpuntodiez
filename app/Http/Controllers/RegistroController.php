@@ -317,13 +317,12 @@ class RegistroController extends Controller
         $registro = Registro::where('ip', $request->ip())->with("usuario")
         ->where('ended_at', '>', $now)
         ->where('created_at', '<', $now)
-        ->with(["usuario.datos"])
+        ->with(["usuario.datos", "actividad"])
         ->orderBy("created_at","DESC")
         ->first();
 
 
-        $actividad = $registro->actividad;
-        $registro["url"]=$actividad->url?? "";
+        $registro->url = $registro->actividad->url ?? '';
         return $registro;
     }
 

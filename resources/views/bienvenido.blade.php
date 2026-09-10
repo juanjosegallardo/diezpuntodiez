@@ -165,7 +165,7 @@
 
           if(data && data.url)
           {
-            location.href=data.url;
+            location.href=data.actividad.url;
           }
           else
           {

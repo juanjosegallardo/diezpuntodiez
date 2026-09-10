@@ -22,5 +22,6 @@ class Actividad extends Model
     'equipo',
     "profesor",
     'observaciones',
+    "url"
 ];
 }
