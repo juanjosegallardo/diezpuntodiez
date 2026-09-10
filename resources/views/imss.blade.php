@@ -66,7 +66,7 @@
               , pégalo donde dice <b>“Ingresa tu CURP”</b> y haz click en <b>siguiente</b>.
             </li>
 
-            <li>
+            <li> 
                 Copia tu NSS 
                 <button onclick="copiar('{{ $registro->usuario->datos['NSS']['valor'] ?? '' }}')" class="btn btn-sm btn-primary">
                     Copiar NSS
