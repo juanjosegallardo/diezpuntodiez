@@ -26,3 +26,6 @@ Route::get("/registro", [RegistroController::class, "registro"]);
 
 
 Route::post('/actividades', [ActividadController::class, 'store']);
+
+// Agenda de consulta; el registro y acceso a actividades conservan sus rutas.
+Route::get('/agenda', \App\Http\Controllers\AgendaController::class);

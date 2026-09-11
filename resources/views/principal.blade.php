@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Servicios, trámites, recursos académicos y avisos para la comunidad estudiantil de CECyTEG Plantel Pénjamo, Guanajuato.">
     <title>Portal Estudiantil · CECyTEG Pénjamo</title>
-    <link rel="icon" type="image/png" sizes="240x240" href="logo_bola.png">
-    <link rel="apple-touch-icon" href="logo_bola.png">
+    <link rel="icon" type="image/png" sizes="240x240" href="{{ asset('images/logo_bola.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo_bola.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -107,7 +107,7 @@
             inset: 0;
             z-index: -1;
             pointer-events: none;
-            background: url('{{  Storage::url('logo.png' )}}') center / min(1100px, 86vw) auto no-repeat;
+            background: url('{{  asset('images/logo.png')}}') center / min(1100px, 86vw) auto no-repeat;
             opacity: .08;
             mix-blend-mode: multiply;
             transition: opacity var(--transition-normal);
@@ -742,6 +742,57 @@
             transform: translateY(0);
         }
 
+        .topbar__actions > .icon-btn {
+            flex: 0 0 44px;
+        }
+
+        .packet-help {
+            margin-top: 18px;
+            max-width: 52ch;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .packet-help summary {
+            width: fit-content;
+            min-height: 44px;
+            padding-block: 10px;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .packet-help__content {
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+        }
+
+        .packet-help__download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+            margin-top: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .packet-help__download svg {
+            flex: 0 0 18px;
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (min-width: 901px) and (max-width: 1100px) {
+            .topbar__inner { gap: 16px; }
+            .nav { gap: 16px; }
+        }
+
         .theme-toggle  {
             position: relative;
             overflow: visible;
@@ -827,7 +878,7 @@
             inset: 0;
             z-index: -1;
             border-radius: inherit;
-            background: url('logo.png') center / 94% auto no-repeat;
+            background: url("{{ asset('images/logo.png') }}") center / 94% auto no-repeat;
             opacity: .055;
             filter: grayscale(1) invert(1);
             mix-blend-mode: screen;
@@ -1020,13 +1071,15 @@
             height: 16px;
         }
 
-        .resource-link:hover {
+        .resource-link:hover,
+        .resource-link:focus-visible {
             background: var(--surface-hover);
             border-color: #a9eaff;
             box-shadow: 0 0 28px rgba(79, 205, 252, .23), inset 0 1px 0 rgba(213, 249, 255, .2);
         }
 
-        .resource-link--app:hover {
+        .resource-link--app:hover,
+        .resource-link--app:focus-visible {
             background: #ffffff;
         }
 
@@ -1035,7 +1088,8 @@
             text-underline-offset: 4px;
         }
 
-        .resource-link:hover::before {
+        .resource-link:hover::before,
+        .resource-link:focus-visible::before {
             opacity: 1;
         }
 
@@ -2420,6 +2474,55 @@
             color: var(--primary);
         }
 
+        /* Firma compacta con las imágenes del equipo. */
+        .creator-signature { position: relative; margin-top: 20px; padding-top: 18px; }
+        .creator-signature::before { content: ''; position: absolute; top: 0; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent, #91e3ee60, #c6baff60, transparent); }
+        .signature-line { display: flex; justify-content: center; align-items: center; gap: 24px; }
+        .signature-powered { margin: 0; color: #c4d9ee; font-size: 11px; font-weight: 500; letter-spacing: .035em; white-space: nowrap; }
+        .signature-makers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; width: min(100%, 324px); }
+        .signature-person { min-width: 0; margin: 0; text-align: center; }
+        .signature-visual { display: flex; align-items: center; justify-content: center; height: 144px; }
+        .signature-photo {
+            position: relative;
+            isolation: isolate;
+            display: block;
+            width: 108px;
+            height: 144px;
+            padding: 2px;
+            border-radius: 14px;
+            background: linear-gradient(125deg, #53edff, #6a8bff, #cd74ff, #ff71a9, #ffd47c, #6cebbd, #53edff);
+            background-size: 350% 350%;
+            box-shadow: 0 0 0 1px #ffffff18, 0 8px 22px #00000035;
+        }
+        .signature-photo::before { content: ''; position: absolute; inset: -4px; z-index: -1; border-radius: 17px; background: inherit; filter: blur(9px); opacity: .35; pointer-events: none; }
+        .signature-photo__crop { display: block; width: 100%; height: 100%; overflow: hidden; border: 1px solid #143353; border-radius: 12px; background: #213b53; }
+        .signature-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+        .signature-logo { width: 100%; }
+        .signature-logo img { display: block; width: 130px; max-width: 100%; height: auto; filter: brightness(0) invert(1) drop-shadow(0 0 10px #c6baff20); }
+        .signature-person figcaption { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; min-height: 34px; margin-top: 8px; line-height: 1.4; }
+        .signature-person strong { color: #bcecf3; font-size: 12px; font-weight: 600; }
+        .signature-role { color: #c4d9ee; font-size: 10px; }
+        .signature-person--backend .signature-role { color: #d2c9ff; }
+        @media (max-width: 520px) {
+            .signature-line { flex-direction: column; gap: 12px; }
+            .signature-makers { gap: 14px; }
+            .signature-logo img { width: 122px; }
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .signature-photo { animation: portrait-rgb-flow 8s ease-in-out infinite; transition: transform 220ms ease, box-shadow 220ms ease; }
+            .signature-photo::before { transition: opacity 220ms ease; }
+            .signature-person:hover .signature-photo { transform: translateY(-2px); box-shadow: 0 0 0 1px #ffffff30, 0 10px 26px #00000040; }
+            .signature-person:hover .signature-photo::before { opacity: .55; }
+        }
+        @keyframes portrait-rgb-flow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @media (forced-colors: active) {
+            .creator-signature::before { background: CanvasText; }
+            .signature-photo { border: 1px solid CanvasText; }
+            .signature-photo::before { display: none; }
+            .signature-logo { padding: 6px; background: #fff; forced-color-adjust: none; }
+            .signature-logo img { filter: none; }
+        }
+
         .back-to-top  {
             position: fixed;
             z-index: 30;
@@ -2533,6 +2636,29 @@
         .welcome__cta:focus-visible::after,
         .resource-link:focus-visible::after {
             animation: card-glint 850ms ease-out;
+        }
+
+        .service-card:focus-visible {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md), 0 0 24px var(--glow-soft);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .resource-link:focus-visible {
+                transform: translateY(-2px);
+            }
+            .resource-link:focus-visible .resource-link__icon {
+                transform: translateY(-3px) rotate(-4deg);
+            }
+            .service-card:focus-visible .service-card__icon {
+                transform: translateY(-2px);
+            }
+            .service-card:focus-visible .service-card__arrow {
+                transform: translate(2px, -2px);
+            }
+            .resource-link:active {
+                transform: scale(.98);
+            }
         }
 
         .faq-item[open] .faq-answer {
@@ -2797,6 +2923,15 @@
             .topbar__actions  {
                 gap: 6px;
             }
+            .topbar__notice {
+                display: none;
+            }
+            .topbar__actions .tooltip::after {
+                white-space: normal;
+                width: max-content;
+                max-width: min(190px, calc(100vw - 32px));
+                text-align: center;
+            }
             .brand__mark  {
                 height: 28px;
                 max-width: 120px;
@@ -2808,9 +2943,7 @@
                 gap: 10px;
             }
             .brand__label {
-                display: flex;
-                max-width: 82px;
-                padding-left: 10px;
+                display: none;
             }
             .brand__label strong {
                 display: none;
@@ -3085,6 +3218,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/agenda.css') }}">
+    <script src="{{ asset('js/agenda.js') }}" defer></script>
 </head>
 <body>
     <div class="portal-content" id="portalContent">
@@ -3094,8 +3229,8 @@
     </button>
     <header class="topbar" id="topbar">
         <div class="topbar__inner container">
-            <a class="brand" href="#bienvenida" aria-label="Volver a la bienvenida de CECyTEG">
-                <div class="brand__logo"><img class="brand__mark" src="{{  Storage::url('logo.png' )}}" alt="CECyTEG Guanajuato"></div>
+            <a class="brand" href="#inicio" aria-label="Volver al inicio de CECyTEG">
+                <div class="brand__logo"><img class="brand__mark" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato"></div>
                 <div class="brand__label">
                     <strong>Portal estudiantil</strong>
                     <span>Plantel Pénjamo</span>
@@ -3105,9 +3240,9 @@
             <nav class="nav" id="mainNav" aria-label="Navegación principal">
                 <a href="#inicio" class="nav__link is-active"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>Inicio</span></a>
                 <a href="#servicios" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Servicios</span></a>
-                <a href="#avisos" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Avisos</span></a>
+                <a href="#avisos" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Próximas</span></a>
                 <a href="#horarios" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2"/></svg><span>Horarios</span></a>
-                <a href="#soporte" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 4h.01"/></svg><span>Soporte</span></a>
+                <a href="{{ url('/test') }}" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 4h.01"/></svg><span>Acceso</span></a>
             </nav>
 
             <div class="topbar__actions">
@@ -3116,7 +3251,13 @@
                     <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></svg>
                 </button>
 
-                <a class="icon-btn tooltip" href="#avisos" aria-label="Ver avisos del plantel" data-tooltip="Avisos del plantel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></a>
+                <a class="icon-btn tooltip" href="cecyteg-packettracer://abrir" aria-label="Abrir Cisco Packet Tracer instalado" data-tooltip="Abrir Packet Tracer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="6" rx="1.5"/><rect x="2" y="16" width="7" height="6" rx="1.5"/><rect x="15" y="16" width="7" height="6" rx="1.5"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg>
+                </a>
+                <a class="icon-btn tooltip" href="https://www.netacad.com/es/" target="_blank" rel="noopener noreferrer" aria-label="Cisco Networking Academy, abrir en otra pestaña" data-tooltip="Cisco NetAcad">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 8 10-5 10 5-10 5-10-5Z"/><path d="M6 10v6c4 3 8 3 12 0v-6M22 8v7"/></svg>
+                </a>
+                <a class="icon-btn tooltip topbar__notice" href="#avisos" aria-label="Ver pr?ximas actividades" data-tooltip="Agenda del dia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></a>
                 <button class="hamburger" id="hamburgerBtn" aria-controls="mainNav" aria-label="Abrir menú" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -3128,15 +3269,15 @@
         <section class="hero" id="inicio" tabindex="-1">
             <div class="hero__inner container">
                 <div class="hero__copy">
-                    <p class="hero__eyebrow"><img class="hero__emblem" src="{{ Storage::url('logo_bola.png' )}}" alt="" width="240" height="240" decoding="async"> CECyTEG · Plantel Pénjamo</p>
+                    <p class="hero__eyebrow"><img class="hero__emblem" src="{{ asset('images/logo_bola.png')}}" alt="" width="240" height="240" decoding="async"> CECyTEG · Plantel Pénjamo</p>
                     <h1 class="hero__title">Tu comunidad,<br><span>en un solo lugar.</span></h1>
                     <p class="hero__text">Encuentra los servicios de tu plantel en un solo lugar.</p>
-                    <div class="hero__resources" role="group" aria-label="Herramientas de aprendizaje">
+                    <div class="hero__resources" role="group" aria-label="Acceso a la red del plantel">
                         <a class="resource-link resource-link--app" href="http://10.20.0.1:1000/login?" aria-describedby="packet-tracer-note">
                             <span class="resource-link__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
                             <span class="resource-link__body">
                                 <span class="resource-link__type">Registro</span>
-                                <span class="resource-link__title"><span class="sr-only">Cisco </span>Iniciar Sesión</span>
+                                <span class="resource-link__title">Iniciar Sesión</span>
                             </span>
                         </a>
                         <a class="resource-link" href="http://10.10.10.10:8000/logout" target="_blank" rel="noopener noreferrer">
@@ -3148,15 +3289,24 @@
                             <span class="sr-only">Abre en otra pestaña</span>
                         </a>
                     </div>
-                    <p class="hero__resource-note" id="packet-tracer-note">Packet Tracer requiere estar instalado. Permite abrir la aplicación si tu navegador lo solicita.</p>
+                    <p class="hero__resource-note" id="packet-tracer-note">Conéctate a la red del plantel para iniciar o cerrar tu sesión de internet.</p>
                     <div class="hero__actions">
                         <a href="#servicios" class="hero__secondary-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-                        <a href="#avisos" class="hero__secondary-link">Consultar avisos</a>
+                        <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>
+                        <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
                     </div>
+                    <details class="packet-help" id="packetTracerHelp">
+                        <summary>¿Packet Tracer no abre?</summary>
+                        <div class="packet-help__content">
+                            <p>El icono de la barra superior abre la aplicación instalada. En Windows, descarga y ejecuta este configurador una vez para tu usuario; después vuelve al icono y acepta el aviso del navegador.</p>
+                            <a class="packet-help__download" href="{{ asset('downloads/configurar-packet-tracer.ps1') }}" download="configurar-packet-tracer.ps1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>Descargar configurador para Windows</a>
+                            <p>Requiere Packet Tracer instalado. Si tu equipo bloquea la configuración, solicita ayuda al Centro de Cómputo. En macOS o Linux, abre la app desde el menú de aplicaciones.</p>
+                        </div>
+                    </details>
                 </div>
                 <figure class="hero__visual">
                     <div class="hero__photo">
-                        <img src="{{ Storage::url('plantel-hero.webp' ) }}" alt="Patio y edificios del plantel CECyTEG Pénjamo" width="387" height="516" fetchpriority="high" decoding="async">
+                        <img src="{{ asset('images/plantel-hero.jpg') }}" alt="Patio y edificios del plantel CECyTEG Pénjamo" width="387" height="516" fetchpriority="high" decoding="async">
                         <span class="hero__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Pénjamo, Guanajuato</span>
                     </div>
                     <figcaption class="hero__caption"><span class="hero__caption-label">Nuestra comunidad</span><strong>CECyTEG Plantel Pénjamo</strong></figcaption>
@@ -3197,7 +3347,7 @@
             </div>
         </section>
 
-        <section class="content" aria-label="Directorio de servicios y avisos">
+        <section class="content" aria-label="Directorio de servicios y agenda del dia">
             <div class="content__inner container">
                 <div class="services">
                     <div class="section-head">
@@ -3274,22 +3424,6 @@
                     <section class="services__group">
                         <h3>Herramientas y acceso institucional</h3>
                         <div class="services__grid">
-                        <a class="service-card" href="http://10.20.0.1:1000/login" target="_blank" rel="noopener">
-                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15"/><path d="M10 17L15 12L10 7"/><path d="M15 12H3"/></svg></span>
-                            <span class="service-card__body">
-                                <span class="service-card__title">Iniciar Sesión</span>
-                                <span class="service-card__desc">Accede al portal institucional</span>
-                            </span>
-                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
-                        </a>
-                        <a class="service-card" href="http://10.10.10.10:8000/logout" target="_blank" rel="noopener">
-                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9"/><path d="M16 17L21 12L16 7"/><path d="M21 12H9"/></svg></span>
-                            <span class="service-card__body">
-                                <span class="service-card__title">Cerrar Sesión</span>
-                                <span class="service-card__desc">Cierra tu sesión en el portal institucional</span>
-                            </span>
-                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
-                        </a>
                         <a class="service-card" href="http://10.10.10.10:8000/busqueda" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M21 21L16.5 16.5"/></svg></span>
                             <span class="service-card__body">
@@ -3311,24 +3445,11 @@
                 </div>
 
                 <aside class="sidebar" id="avisos" tabindex="-1">
-                    <div class="notice-panel">
-                        <div class="notice-panel__head">
-                            <div class="notice-panel__heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><h2>Avisos del plantel</h2></div>
-                            <p>Información para la comunidad estudiantil</p>
-                        </div>
-                        <ul class="notice-list">
-                            <li class="notice">
-                                <span class="notice__tag notice__tag--general">General</span>
-                                <h3 class="notice__title">Un espacio para nuestra comunidad</h3>
-                                <p class="notice__text">Bienvenidos .</p>
-                            </li>
-                           
-                        </ul>
-                    </div>
+                    @include('partials.agenda')
                     <div class="help-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3m.1 4h.01"/></svg>
                         <h3>¿Necesitas orientación?</h3>
                         <p>Encuentra respuestas sobre calificaciones, credenciales y acceso al portal.</p>
-                        <a href="#faq">Ver preguntas frecuentes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                        <a href="mailto:juangallardo@cecyteg.edu.mx">Contactar al Centro de Cómputo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
                     </div>
                 </aside>
             </div>
@@ -3396,7 +3517,7 @@
     <footer class="site-footer">
         <div class="site-footer__inner container">
             <div class="site-footer__brand">
-                <img class="site-footer__logo" src="{{  Storage::url('logo.png' )}}" alt="CECyTEG Guanajuato" width="2837" height="854" loading="lazy" decoding="async">
+                <img class="site-footer__logo" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato" width="2837" height="854" loading="lazy" decoding="async">
                 <span class="site-footer__title">Plantel Pénjamo</span>
                 <span class="site-footer__sub">Comunidad estudiantil · Guanajuato</span>
             </div>
@@ -3415,6 +3536,23 @@
                 </a>
             </div>
         </div>
+        <div class="creator-signature container">
+            <div class="signature-line">
+                <p class="signature-powered">Powered by</p>
+                <div class="signature-makers">
+                    <figure class="signature-person">
+                        <div class="signature-visual">
+                            <span class="signature-photo"><span class="signature-photo__crop"><img src="{{ asset('images/Angel.webp') }}" alt="Retrato de Angel Escamilla" width="896" height="1600" loading="lazy" decoding="async"></span></span>
+                        </div>
+                        <figcaption><strong>Angel Escamilla</strong><span class="signature-role">Frontend</span></figcaption>
+                    </figure>
+                    <figure class="signature-person signature-person--backend">
+                        <div class="signature-visual signature-logo"><img src="{{ asset('images/Juanjosoft.png') }}" alt="juanjosoft" width="1254" height="189" loading="lazy" decoding="async"></div>
+                        <figcaption><span class="signature-role">Backend</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
     </footer>
     </div>
 
@@ -3430,7 +3568,7 @@
             const mobile = window.matchMedia('(max-width: 900px)');
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
             const navLinks = [...nav.querySelectorAll('.nav__link')];
-            const sections = ['inicio', 'servicios', 'avisos', 'horarios', 'soporte'].map(id => document.getElementById(id));
+            const sections = ['inicio', 'servicios', 'avisos', 'horarios'].map(id => document.getElementById(id)).filter(Boolean);
             const anchorSections = [...sections].filter(Boolean);
             let selectedSection = null;
             let framePending = false;
@@ -3454,44 +3592,44 @@
 
             const scheduleCatalog = {
                 grupos: [
-                    { grupo: '2901', pdf: 'horarios_grupos/2901.pdf' },
-                    { grupo: '2902', pdf: 'horarios_grupos/2902.pdf' },
-                    { grupo: '2903', pdf: 'horarios_grupos/2903.pdf' },
-                    { grupo: '2904', pdf: 'horarios_grupos/2904.pdf' },
-                    { grupo: '2905', pdf: 'horarios_grupos/2905.pdf' },
-                    { grupo: '2906', pdf: 'horarios_grupos/2906.pdf' },
-                    { grupo: '3001', pdf: 'horarios_grupos/3001.pdf' },
-                    { grupo: '3002', pdf: 'horarios_grupos/3002.pdf' },
-                    { grupo: '3003', pdf: 'horarios_grupos/3003.pdf' },
-                    { grupo: '3004', pdf: 'horarios_grupos/3004.pdf' },
-                    { grupo: '3005', pdf: 'horarios_grupos/3005.pdf' },
-                    { grupo: '3006', pdf: 'horarios_grupos/3006.pdf' },
-                    { grupo: '3101', pdf: 'horarios_grupos/3101.pdf' },
-                    { grupo: '3102', pdf: 'horarios_grupos/3102.pdf' },
-                    { grupo: '3103', pdf: 'horarios_grupos/3103.pdf' },
-                    { grupo: '3104', pdf: 'horarios_grupos/3104.pdf' },
-                    { grupo: '3105', pdf: 'horarios_grupos/3105.pdf' },
-                    { grupo: '3106', pdf: 'horarios_grupos/3106.pdf' },
+                    { grupo: '2901', pdf: @json(asset('horarios_grupos/2901.pdf')) },
+                    { grupo: '2902', pdf: @json(asset('horarios_grupos/2902.pdf')) },
+                    { grupo: '2903', pdf: @json(asset('horarios_grupos/2903.pdf')) },
+                    { grupo: '2904', pdf: @json(asset('horarios_grupos/2904.pdf')) },
+                    { grupo: '2905', pdf: @json(asset('horarios_grupos/2905.pdf')) },
+                    { grupo: '2906', pdf: @json(asset('horarios_grupos/2906.pdf')) },
+                    { grupo: '3001', pdf: @json(asset('horarios_grupos/3001.pdf')) },
+                    { grupo: '3002', pdf: @json(asset('horarios_grupos/3002.pdf')) },
+                    { grupo: '3003', pdf: @json(asset('horarios_grupos/3003.pdf')) },
+                    { grupo: '3004', pdf: @json(asset('horarios_grupos/3004.pdf')) },
+                    { grupo: '3005', pdf: @json(asset('horarios_grupos/3005.pdf')) },
+                    { grupo: '3006', pdf: @json(asset('horarios_grupos/3006.pdf')) },
+                    { grupo: '3101', pdf: @json(asset('horarios_grupos/3101.pdf')) },
+                    { grupo: '3102', pdf: @json(asset('horarios_grupos/3102.pdf')) },
+                    { grupo: '3103', pdf: @json(asset('horarios_grupos/3103.pdf')) },
+                    { grupo: '3104', pdf: @json(asset('horarios_grupos/3104.pdf')) },
+                    { grupo: '3105', pdf: @json(asset('horarios_grupos/3105.pdf')) },
+                    { grupo: '3106', pdf: @json(asset('horarios_grupos/3106.pdf')) },
                 ],
                 docentes: [
-                    { nombre: 'Angélica Gutiérrez Morales', pdf: 'horarios_docentes/ANGELICA.pdf' }, 
-                    { nombre: 'Blanca Rosa Troncoso Domínguez', pdf: 'horarios_docentes/BLANCA.pdf' }, // 02
-                    { nombre: 'Cristina Guerrero Rodríguez', pdf: 'horarios_docentes/CRISTINA.pdf' }, // 03
-                    { nombre: 'David Zaragoza Torres', pdf: 'horarios_docentes/DAVID.pdf' }, // 04
-                    { nombre: 'Héctor Mejía Martínez', pdf: 'horarios_docentes/HECTOR.pdf' }, // 05
-                    { nombre: 'Hortensia Espitia Rodríguez', pdf: 'horarios_docentes/HORTENSIA.pdf' }, // 06
-                    { nombre: 'Jaime Hernández Calderón', pdf: 'horarios_docentes/JAIME.pdf' }, // 07
-                    { nombre: 'José Francisco González Alvarado', pdf: 'horarios_docentes/JOSE.pdf' }, // 08
-                    { nombre: 'José Luis Luevanos Barragán', pdf: 'horarios_docentes/JOSE_LUIS.pdf' }, // 09
-                    { nombre: 'Julia Elena Nuñes Soto', pdf: 'horarios_docentes/JULIA.pdf' }, // 10
-                    { nombre: 'Octavio Ramírez Medel', pdf: 'horarios_docentes/OCTAVIO.pdf' }, // 11
-                    { nombre: 'Reynaldo Negrete Soto', pdf: 'horarios_docentes/REYNALDO.pdf' }, // 12
-                    { nombre: 'Roberto Baltazar Vázquez', pdf: 'horarios_docentes/ROBERTO.pdf' }, // 13
-                    { nombre: 'Salvador Cabrera Vázquez', pdf: 'horarios_docentes/SALVADOR.pdf' }, // 14
-                    { nombre: 'Victor Manuel Zapien Ceno', pdf: 'horarios_docentes/VICTOR.pdf' },  // 15
-                    { nombre: 'Norberto Zavala García', pdf: 'horarios_docentes/NORBERTO.pdf' }, // 16
-                    { nombre: 'Jonhy Walther Salinas Montejano', pdf: 'horarios_docentes/JONHY.pdf' }, // 17
-                    { nombre: 'Xochitl Yesenia Rangel Segundo', pdf: 'horarios_docentes/XOCHITL.pdf' }  // 18
+                    { nombre: 'Angélica Gutiérrez Morales', pdf: @json(asset('horarios_docentes/ANGELICA.pdf')) },
+                    { nombre: 'Blanca Rosa Troncoso Domínguez', pdf: @json(asset('horarios_docentes/BLANCA.pdf')) }, // 02
+                    { nombre: 'Cristina Guerrero Rodríguez', pdf: @json(asset('horarios_docentes/CRISTINA.pdf')) }, // 03
+                    { nombre: 'David Zaragoza Torres', pdf: @json(asset('horarios_docentes/DAVID.pdf')) }, // 04
+                    { nombre: 'Héctor Mejía Martínez', pdf: @json(asset('horarios_docentes/HECTOR.pdf')) }, // 05
+                    { nombre: 'Hortensia Espitia Rodríguez', pdf: @json(asset('horarios_docentes/HORTENSIA.pdf')) }, // 06
+                    { nombre: 'Jaime Hernández Calderón', pdf: @json(asset('horarios_docentes/JAIME.pdf')) }, // 07
+                    { nombre: 'José Francisco González Alvarado', pdf: @json(asset('horarios_docentes/JOSE.pdf')) }, // 08
+                    { nombre: 'José Luis Luevanos Barragán', pdf: @json(asset('horarios_docentes/JOSE_LUIS.pdf')) }, // 09
+                    { nombre: 'Julia Elena Nuñes Soto', pdf: @json(asset('horarios_docentes/JULIA.pdf')) }, // 10
+                    { nombre: 'Octavio Ramírez Medel', pdf: @json(asset('horarios_docentes/OCTAVIO.pdf')) }, // 11
+                    { nombre: 'Reynaldo Negrete Soto', pdf: @json(asset('horarios_docentes/REYNALDO.pdf')) }, // 12
+                    { nombre: 'Roberto Baltazar Vázquez', pdf: @json(asset('horarios_docentes/ROBERTO.pdf')) }, // 13
+                    { nombre: 'Salvador Cabrera Vázquez', pdf: @json(asset('horarios_docentes/SALVADOR.pdf')) }, // 14
+                    { nombre: 'Victor Manuel Zapien Ceno', pdf: @json(asset('horarios_docentes/VICTOR.pdf')) },  // 15
+                    { nombre: 'Norberto Zavala García', pdf: @json(asset('horarios_docentes/NORBERTO.pdf')) }, // 16
+                    { nombre: 'Jonhy Walther Salinas Montejano', pdf: @json(asset('horarios_docentes/JHONY.pdf')) }, // 17
+                    { nombre: 'Xochitl Yesenia Rangel Segundo', pdf: @json(asset('horarios_docentes/XOCHI.pdf')) }  // 18
                 ]
             };
 
@@ -3631,7 +3769,7 @@
             prepareScheduleBrowser();
 
             function prepareSectionReveals() {
-                const targets = [...portal.querySelectorAll('.hero__copy, .hero__visual, .section-head, .service-card, .notice-panel, .help-card, .schedule-card, .support-card, .faq-section, .location-card')];
+                const targets = [...portal.querySelectorAll('.hero__copy, .hero__visual, .section-head, .service-card, .notice-panel, .help-card, .schedule-card, .support-card, .faq-section, .location-card, .creator-signature')];
                 targets.forEach((target, index) => {
                     target.dataset.reveal = '';
                     target.style.setProperty('--reveal-delay', target.classList.contains('service-card') ? `${index % 3 * 60}ms` : '0ms');
@@ -3710,7 +3848,7 @@
                     if (section.id === 'avisos' && window.innerWidth > 900) return;
                     if (section.getBoundingClientRect().top <= offset) active = section.id;
                 });
-                if (window.scrollY > 0 && window.innerHeight + window.scrollY >= root.scrollHeight - 4) active = 'soporte';
+                if (window.scrollY > 0 && window.innerHeight + window.scrollY >= root.scrollHeight - 4) active = sections[sections.length - 1].id;
                 setActive(active);
             }
             function queueUpdate() {
