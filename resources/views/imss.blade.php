@@ -82,8 +82,9 @@
 
             <li>Escribe a mano tu correo en donde dice: <b>Confirma tu correo electrónico personal</b> </li>
             <li>Escribe las letras de la imagen que se muestra y escribelas donde dice <b>Captura</b></li>
-
+<!--
             <li>Abre tu correo electrónico y revisa el archivo si no sabes como hacerlo puedes hacer click en el siguiente enlace <a href="http://10.10.10.10:8000/me?url=correo">Abrir correo electrónico</a> </li>
+-->
           </ol>
         </div>
       </div>
