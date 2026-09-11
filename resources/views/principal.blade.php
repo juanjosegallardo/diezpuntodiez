@@ -3191,7 +3191,7 @@
             <nav class="nav" id="mainNav" aria-label="Navegación principal">
                 <a href="#inicio" class="nav__link is-active"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>Inicio</span></a>
                 <a href="#servicios" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Servicios</span></a>
-                <a href="#avisos" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Pr?ximas</span></a>
+                <a href="#avisos" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Próximas</span></a>
                 <a href="#horarios" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2"/></svg><span>Horarios</span></a>
                 <a href="{{ url('/test') }}" class="nav__link"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 4h.01"/></svg><span>Acceso</span></a>
             </nav>
@@ -3208,7 +3208,7 @@
                 <a class="icon-btn tooltip" href="https://www.netacad.com/es/" target="_blank" rel="noopener noreferrer" aria-label="Cisco Networking Academy, abrir en otra pestaña" data-tooltip="Cisco NetAcad">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 8 10-5 10 5-10 5-10-5Z"/><path d="M6 10v6c4 3 8 3 12 0v-6M22 8v7"/></svg>
                 </a>
-                <a class="icon-btn tooltip topbar__notice" href="#avisos" aria-label="Ver pr?ximas actividades" data-tooltip="Agenda del d?a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></a>
+                <a class="icon-btn tooltip topbar__notice" href="#avisos" aria-label="Ver pr?ximas actividades" data-tooltip="Agenda del dia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></a>
                 <button class="hamburger" id="hamburgerBtn" aria-controls="mainNav" aria-label="Abrir menú" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -3243,7 +3243,7 @@
                     <p class="hero__resource-note" id="packet-tracer-note">Conéctate a la red del plantel para iniciar o cerrar tu sesión de internet.</p>
                     <div class="hero__actions">
                         <a href="#servicios" class="hero__secondary-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-                        <a href="#avisos" class="hero__secondary-link">Ver actividades del d?a</a>
+                        <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>
                         <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
                     </div>
                     <details class="packet-help" id="packetTracerHelp">
@@ -3298,7 +3298,7 @@
             </div>
         </section>
 
-        <section class="content" aria-label="Directorio de servicios y agenda del d?a">
+        <section class="content" aria-label="Directorio de servicios y agenda del dia">
             <div class="content__inner container">
                 <div class="services">
                     <div class="section-head">
