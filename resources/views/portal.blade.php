@@ -270,12 +270,12 @@ textarea { min-height: 100px; resize: vertical; }
     <main class="oc">
       <div class="ic">
         <form action="%%AUTH_POST_URL%%" method="post" id="formulario" tabindex="-1" aria-labelledby="form-title">
-          <div class="form-brand"><img src="%%IMAGE:logo_cecyteg%%" data-brand-fallback="{{ asset('images/cecyteg2.png') }}" alt="CECyTEG Guanajuato" width="172" height="50"><a class="form-back" href="{{ url('/') }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg>Volver al inicio</a></div>
+          <div class="form-brand"><img src="%%IMAGE:logo_cecyteg%%" alt="CECyTEG Guanajuato" width="172" height="50"><a class="form-back" href="http://10.10.10.10:8000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg>Volver al inicio</a></div>
           <input type="hidden" name="%%REDIRID%%" id="hf_url" value="http://10.10.10.10/">
           <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%">
           <input type="hidden"  name="%%USERNAMEID%%"  id="ft_un">
           <input name="%%PASSWORDID%%"  value="cecyteg" id="ft_pd" type="hidden">
-          <header class="form-head"><span class="form-icon" aria-hidden="true"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="3" width="8" height="5" rx="1.5"/><rect x="2" y="16" width="8" height="5" rx="1.5"/><rect x="14" y="16" width="8" height="5" rx="1.5"/><path d="M12 8v4M6 16v-4h12v4"/></svg></span><div class="form-heading"><p class="eyebrow">Portal de acceso</p><h1 id="form-title">Acceso a internet</h1></div><p class="form-description">Selecciona tu actividad e ingresa tus credenciales del plantel para continuar.</p></header>
+          <header class="form-head"><span class="form-icon" aria-hidden="true"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="3" width="8" height="5" rx="1.5"/><rect x="2" y="16" width="8" height="5" rx="1.5"/><rect x="14" y="16" width="8" height="5" rx="1.5"/><path d="M12 8v4M6 16v-4h12v4"/></svg></span><div class="form-heading"><p class="eyebrow">Portal de acceso</p><h1 id="form-title">Registrar</h1></div><p class="form-description">Selecciona tu actividad e ingresa tus credenciales del plantel para continuar.</p></header>
           <div class="gateway-question">%%QUESTION%%</div>
           <p class="form-status" id="mensaje" role="status" aria-live="polite" aria-atomic="true"></p>
             <fieldset class="form-section">
@@ -331,8 +331,7 @@ textarea { min-height: 100px; resize: vertical; }
             </fieldset>
           <div class="fer">
 
-            <button id="btn_enviar" type="submit">Conectar a internet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
-            <p class="submit-note">Si necesitas ayuda con tus credenciales, acude al Centro de Cómputo.</p>
+            <button id="btn_enviar" type="submit">Siguiente <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
           </div>
         </form>
       </div>
