@@ -2474,6 +2474,55 @@
             color: var(--primary);
         }
 
+        /* Firma compacta con las imágenes del equipo. */
+        .creator-signature { position: relative; margin-top: 20px; padding-top: 18px; }
+        .creator-signature::before { content: ''; position: absolute; top: 0; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent, #91e3ee60, #c6baff60, transparent); }
+        .signature-line { display: flex; justify-content: center; align-items: center; gap: 24px; }
+        .signature-powered { margin: 0; color: #c4d9ee; font-size: 11px; font-weight: 500; letter-spacing: .035em; white-space: nowrap; }
+        .signature-makers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; width: min(100%, 324px); }
+        .signature-person { min-width: 0; margin: 0; text-align: center; }
+        .signature-visual { display: flex; align-items: center; justify-content: center; height: 144px; }
+        .signature-photo {
+            position: relative;
+            isolation: isolate;
+            display: block;
+            width: 108px;
+            height: 144px;
+            padding: 2px;
+            border-radius: 14px;
+            background: linear-gradient(125deg, #53edff, #6a8bff, #cd74ff, #ff71a9, #ffd47c, #6cebbd, #53edff);
+            background-size: 350% 350%;
+            box-shadow: 0 0 0 1px #ffffff18, 0 8px 22px #00000035;
+        }
+        .signature-photo::before { content: ''; position: absolute; inset: -4px; z-index: -1; border-radius: 17px; background: inherit; filter: blur(9px); opacity: .35; pointer-events: none; }
+        .signature-photo__crop { display: block; width: 100%; height: 100%; overflow: hidden; border: 1px solid #143353; border-radius: 12px; background: #213b53; }
+        .signature-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+        .signature-logo { width: 100%; }
+        .signature-logo img { display: block; width: 130px; max-width: 100%; height: auto; filter: brightness(0) invert(1) drop-shadow(0 0 10px #c6baff20); }
+        .signature-person figcaption { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; min-height: 34px; margin-top: 8px; line-height: 1.4; }
+        .signature-person strong { color: #bcecf3; font-size: 12px; font-weight: 600; }
+        .signature-role { color: #c4d9ee; font-size: 10px; }
+        .signature-person--backend .signature-role { color: #d2c9ff; }
+        @media (max-width: 520px) {
+            .signature-line { flex-direction: column; gap: 12px; }
+            .signature-makers { gap: 14px; }
+            .signature-logo img { width: 122px; }
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .signature-photo { animation: portrait-rgb-flow 8s ease-in-out infinite; transition: transform 220ms ease, box-shadow 220ms ease; }
+            .signature-photo::before { transition: opacity 220ms ease; }
+            .signature-person:hover .signature-photo { transform: translateY(-2px); box-shadow: 0 0 0 1px #ffffff30, 0 10px 26px #00000040; }
+            .signature-person:hover .signature-photo::before { opacity: .55; }
+        }
+        @keyframes portrait-rgb-flow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @media (forced-colors: active) {
+            .creator-signature::before { background: CanvasText; }
+            .signature-photo { border: 1px solid CanvasText; }
+            .signature-photo::before { display: none; }
+            .signature-logo { padding: 6px; background: #fff; forced-color-adjust: none; }
+            .signature-logo img { filter: none; }
+        }
+
         .back-to-top  {
             position: fixed;
             z-index: 30;
@@ -3487,6 +3536,23 @@
                 </a>
             </div>
         </div>
+        <div class="creator-signature container">
+            <div class="signature-line">
+                <p class="signature-powered">Powered by</p>
+                <div class="signature-makers">
+                    <figure class="signature-person">
+                        <div class="signature-visual">
+                            <span class="signature-photo"><span class="signature-photo__crop"><img src="{{ asset('images/Angel.webp') }}" alt="Retrato de Angel Escamilla" width="896" height="1600" loading="lazy" decoding="async"></span></span>
+                        </div>
+                        <figcaption><strong>Angel Escamilla</strong><span class="signature-role">Frontend</span></figcaption>
+                    </figure>
+                    <figure class="signature-person signature-person--backend">
+                        <div class="signature-visual signature-logo"><img src="{{ asset('images/Juanjosoft.png') }}" alt="juanjosoft" width="1254" height="189" loading="lazy" decoding="async"></div>
+                        <figcaption><span class="signature-role">Backend</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
     </footer>
     </div>
 
@@ -3703,7 +3769,7 @@
             prepareScheduleBrowser();
 
             function prepareSectionReveals() {
-                const targets = [...portal.querySelectorAll('.hero__copy, .hero__visual, .section-head, .service-card, .notice-panel, .help-card, .schedule-card, .support-card, .faq-section, .location-card')];
+                const targets = [...portal.querySelectorAll('.hero__copy, .hero__visual, .section-head, .service-card, .notice-panel, .help-card, .schedule-card, .support-card, .faq-section, .location-card, .creator-signature')];
                 targets.forEach((target, index) => {
                     target.dataset.reveal = '';
                     target.style.setProperty('--reveal-delay', target.classList.contains('service-card') ? `${index % 3 * 60}ms` : '0ms');
