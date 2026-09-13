@@ -3220,6 +3220,7 @@
     </style>
     <link rel="stylesheet" href="{{ asset('css/agenda.css') }}">
     <script src="{{ asset('js/agenda.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/examenes.css') }}">
 </head>
 <body>
     <div class="portal-content" id="portalContent">
@@ -3232,7 +3233,6 @@
             <a class="brand" href="#inicio" aria-label="Volver al inicio de CECyTEG">
                 <div class="brand__logo"><img class="brand__mark" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato"></div>
                 <div class="brand__label">
-                    <strong>Portal estudiantil</strong>
                     <span>Plantel Pénjamo</span>
                 </div>
             </a>
@@ -3257,7 +3257,7 @@
                 <a class="icon-btn tooltip" href="https://www.netacad.com/es/" target="_blank" rel="noopener noreferrer" aria-label="Cisco Networking Academy, abrir en otra pestaña" data-tooltip="Cisco NetAcad">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 8 10-5 10 5-10 5-10-5Z"/><path d="M6 10v6c4 3 8 3 12 0v-6M22 8v7"/></svg>
                 </a>
-                <a class="icon-btn tooltip topbar__notice" href="#avisos" aria-label="Ver pr?ximas actividades" data-tooltip="Agenda del dia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></a>
+                <a class="icon-btn tooltip topbar__notice" href="#avisos" aria-label="Ver próximas actividades" data-tooltip="Agenda del dia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></a>
                 <button class="hamburger" id="hamburgerBtn" aria-controls="mainNav" aria-label="Abrir menú" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -3291,6 +3291,7 @@
                     </div>
                     <p class="hero__resource-note" id="packet-tracer-note">Conéctate a la red del plantel para iniciar o cerrar tu sesión de internet.</p>
                     <div class="hero__actions">
+                        <a href="#examenes" class="hero__secondary-link hero__secondary-link--exam">Ver exámenes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
                         <a href="#servicios" class="hero__secondary-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
                         <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>
                         <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
@@ -3314,6 +3315,8 @@
             </div>
         </section>
 
+       <!-- @include('partials.examenes') -->
+
         <section class="quick-access container" id="servicios" tabindex="-1" aria-labelledby="quick-title">
             <div class="section-head">
                 <p class="section-eyebrow">Servicios estudiantiles</p>
@@ -3322,6 +3325,30 @@
             </div>
             <div class="services__frequent">
                 
+                        <a class="service-card service-card--lg service-card--classroom" data-semestre="1" href="https://miaula1.cecyteg.edu.mx" target="_blank" rel="noopener noreferrer">
+                            <span class="service-card__icon semester-mark" aria-hidden="true">1°</span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Mi Aula Primero</span>
+                                <span class="service-card__desc">Accede a Mi Aula Primero</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg service-card--classroom" data-semestre="3" href="https://miaula3.cecyteg.edu.mx" target="_blank" rel="noopener noreferrer">
+                            <span class="service-card__icon semester-mark" aria-hidden="true">3°</span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Mi Aula Tercero</span>
+                                <span class="service-card__desc">Accede a Mi Aula Tercero</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg service-card--classroom" data-semestre="5" href="https://miaula5.cecyteg.edu.mx" target="_blank" rel="noopener noreferrer">
+                            <span class="service-card__icon semester-mark" aria-hidden="true">5°</span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Mi Aula Quinto</span>
+                                <span class="service-card__desc">Accede a Mi Aula Quinto</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
                         <a class="service-card service-card--lg" href="http://10.10.10.10:8000/me?url=correo" target="_blank" rel="noopener">
                             <span class="service-card__icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7L12 13L21 7"/></svg>
@@ -3342,7 +3369,6 @@
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
-
 
             </div>
         </section>
@@ -3445,7 +3471,7 @@
                 </div>
 
                 <aside class="sidebar" id="avisos" tabindex="-1">
-                    @include('partials.agenda')
+                    <!-- @include('partials.agenda') -->
                     <div class="help-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3m.1 4h.01"/></svg>
                         <h3>¿Necesitas orientación?</h3>
                         <p>Encuentra respuestas sobre calificaciones, credenciales y acceso al portal.</p>
@@ -3569,7 +3595,7 @@
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
             const navLinks = [...nav.querySelectorAll('.nav__link')];
             const sections = ['inicio', 'servicios', 'avisos', 'horarios'].map(id => document.getElementById(id)).filter(Boolean);
-            const anchorSections = [...sections].filter(Boolean);
+            const anchorSections = [...sections, document.getElementById('examenes')].filter(Boolean);
             let selectedSection = null;
             let framePending = false;
             let viewportWidth = window.innerWidth;
@@ -3769,7 +3795,7 @@
             prepareScheduleBrowser();
 
             function prepareSectionReveals() {
-                const targets = [...portal.querySelectorAll('.hero__copy, .hero__visual, .section-head, .service-card, .notice-panel, .help-card, .schedule-card, .support-card, .faq-section, .location-card, .creator-signature')];
+                const targets = [...portal.querySelectorAll('.hero__copy, .hero__visual, .section-head, .service-card, .notice-panel, .help-card, .schedule-card, .support-card, .faq-section, .location-card, .creator-signature, .exams-section')];
                 targets.forEach((target, index) => {
                     target.dataset.reveal = '';
                     target.style.setProperty('--reveal-delay', target.classList.contains('service-card') ? `${index % 3 * 60}ms` : '0ms');
