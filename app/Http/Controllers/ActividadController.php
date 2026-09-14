@@ -21,6 +21,19 @@ class ActividadController extends Controller
             ->header('Expires', '0');
     }
 
+
+    public function lanzador()
+    {
+        $actividades = Actividad::whereNotNull("url")
+        ->whereRaw(
+            'fecha_entrada <= NOW()
+            AND DATE_ADD(fecha_entrada, INTERVAL duracion MINUTE) >= NOW()'
+        )
+        ->orderBy('nombre', 'ASC')->get();
+        return response()
+            ->view('lanzador', ['actividades' => $actividades]);
+    }
+
     public function index()
     {
         return Actividad::whereRaw(

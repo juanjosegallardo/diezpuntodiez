@@ -14,6 +14,8 @@ Route::get('/me', [RegistroController::class, "me"]);
 
 Route::get("/actividades/{id}/seb",[ActividadController::class, "seb"]);
 
+Route::get("/lanzador",[ActividadController::class, "lanzador"]);
+
 Route::get('/ok', function () {
     return view('bienvenido');
 });

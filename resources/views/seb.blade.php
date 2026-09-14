@@ -5,7 +5,7 @@
     <key>originatorVersion</key>
     <string>SEB_Win_2.1.1</string>
     <key>startURL</key>
-    <string>{{ $actividad["url"] }}</string>
+    <string>{{ request()->boolean('respaldo') ? $actividad["url_respaldo"] : $actividad["url"] }}</string>
     <key>startResource</key>
     <string />
     <key>sebServerURL</key>
