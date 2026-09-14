@@ -3232,7 +3232,7 @@
     <header class="topbar" id="topbar">
         <div class="topbar__inner container">
             <a class="brand" href="#inicio" aria-label="Volver al inicio de CECyTEG">
-                <div class="brand__logo"><span class="patrio-logo"><img class="brand__mark" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato"></span></div>
+                <div class="brand__logo"><img class="brand__mark" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato"></div>
                 <div class="brand__label">
                     <span>Plantel Pénjamo</span>
                 </div>
@@ -3545,7 +3545,7 @@
     <footer class="site-footer">
         <div class="site-footer__inner container">
             <div class="site-footer__brand">
-                <span class="patrio-logo patrio-logo--footer"><img class="site-footer__logo" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato" width="2837" height="854" loading="lazy" decoding="async"></span>
+                <img class="site-footer__logo" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato" width="2837" height="854" loading="lazy" decoding="async">
                 <span class="site-footer__title">Plantel Pénjamo</span>
                 <span class="site-footer__sub">Comunidad estudiantil · Guanajuato</span>
             </div>
