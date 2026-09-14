@@ -1,0 +1,137 @@
+/* Tema de septiembre. Retira data-season="patrio" del HTML para volver a la paleta original. */
+:root[data-season="patrio"] {
+    --primary: #096347;
+    --primary-hover: #064c37;
+    --primary-contrast: #ffffff;
+    --accent: #ac2938;
+    --background: #fafbf8;
+    --surface-hover: #edf5ef;
+    --surface-secondary: #f0f4ef;
+    --brand-navy: #082e25;
+    --brand-blue: #10533d;
+    --brand-highlight: #d1eddd;
+    --brand-muted: #d4e4dc;
+    --border: #dbe5de;
+    --text-primary: #19392e;
+    --text-secondary: #596b61;
+    --header-background: rgba(255, 255, 252, .97);
+    --neon-cyan: #3cac7b;
+    --edge-light: #bcd3c4;
+    --glow-soft: #13754d0b;
+    --glow-strong: #13754d24;
+    --ambient-cyan: #be35450a;
+    --patrio-green: #087349;
+    --patrio-red: #ba3042;
+    --patrio-gold: #886429;
+    --patrio-soft: #fff3f1;
+    --patrio-tricolor: linear-gradient(90deg, #07844d 0% 33.33%, #fffdf4 33.33% 66.66%, #d33748 66.66% 100%);
+}
+
+:root[data-season="patrio"][data-theme="dark"] {
+    --primary: #9adeb8;
+    --primary-hover: #c1f2d5;
+    --primary-contrast: #092d20;
+    --accent: #ffa7af;
+    --background: #0b1310;
+    --surface: #14231c;
+    --surface-hover: #1c3126;
+    --surface-secondary: #192c22;
+    --brand-navy: #081f19;
+    --brand-blue: #103e2e;
+    --accent-soft: #362026;
+    --border: #30473a;
+    --text-primary: #f1f5ed;
+    --text-secondary: #b6c8bc;
+    --header-background: rgba(15, 27, 21, .97);
+    --neon-cyan: #7addaa;
+    --edge-light: #42654f;
+    --glow-soft: #52d6900b;
+    --glow-strong: #52d69026;
+    --ambient-cyan: #f3627510;
+    --patrio-green: #97ddb5;
+    --patrio-red: #ffa7af;
+    --patrio-gold: #e5c791;
+    --patrio-soft: #342229;
+}
+
+[data-season="patrio"] .topbar::before { height: 3px; background: var(--patrio-tricolor); box-shadow: 0 0 14px var(--glow-strong); }
+[data-season="patrio"] .section-eyebrow::before { width: 30px; background: var(--patrio-tricolor); box-shadow: 0 0 0 1px var(--border); }
+
+.patrio-banner { display: none; }
+[data-season="patrio"] .patrio-banner {
+    position: relative; isolation: isolate; display: flex; align-items: center; gap: 24px;
+    margin-top: 26px; padding: 24px 30px; overflow: hidden;
+    border: 1px solid var(--border); border-radius: 20px;
+    background: radial-gradient(ellipse at 0 100%, var(--glow-strong), transparent 45%), radial-gradient(ellipse at 100% 0, var(--patrio-soft), transparent 55%), var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+[data-season="patrio"] .patrio-banner::after { content: ''; position: absolute; inset: auto 0 0; height: 3px; background: var(--patrio-tricolor); pointer-events: none; }
+[data-season="patrio"] .patrio-banner__flag { position: relative; flex-shrink: 0; padding: 6px; border: 1px solid var(--edge-light); border-radius: 10px; background: var(--surface); box-shadow: 0 5px 18px #072e2214; transform: rotate(-4deg); }
+[data-season="patrio"] .patrio-banner__flag img { display: block; width: 88px; height: 66px; border-radius: 5px; object-fit: cover; }
+[data-season="patrio"] .patrio-banner__copy { position: relative; z-index: 1; min-width: 0; }
+[data-season="patrio"] .patrio-banner__eyebrow { margin-bottom: 5px; color: var(--patrio-green); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; line-height: 1.6; }
+[data-season="patrio"] .patrio-banner h2 { margin-bottom: 4px; color: var(--text-primary); font-size: clamp(24px, 3vw, 32px); font-weight: 800; line-height: 1.15; letter-spacing: -.045em; }
+[data-season="patrio"] .patrio-banner h2 span { color: var(--patrio-red); }
+[data-season="patrio"] .patrio-banner__copy > p:last-child { color: var(--text-secondary); font-size: 12px; line-height: 1.6; }
+[data-season="patrio"] .patrio-banner__seal { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 148px; padding: 7px 11px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--patrio-gold); font-size: 11px; font-weight: 600; white-space: nowrap; }
+[data-season="patrio"] .patrio-papel { position: absolute; z-index: -1; right: -5px; top: 4px; width: 190px; height: 100px; color: var(--edge-light); opacity: .75; pointer-events: none; transform: rotate(8deg); }
+[data-season="patrio"] .patrio-papel__green { fill: var(--patrio-green); }
+[data-season="patrio"] .patrio-papel__white { fill: #fffdf4; stroke: var(--edge-light); stroke-width: .6px; }
+[data-season="patrio"] .patrio-papel__red { fill: var(--patrio-red); }
+
+/* El hero y el footer conservan su paleta original en ambos modos. */
+[data-season="patrio"] .hero,
+[data-season="patrio"] .site-footer {
+    --brand-navy: #12345f;
+    --brand-blue: #164b86;
+    --brand-highlight: #b9dbff;
+    --brand-muted: #d6e4f5;
+    --surface-secondary: #eef3fa;
+    --glow-soft: rgba(36, 94, 219, .09);
+    --glow-strong: rgba(36, 111, 219, .2);
+}
+[data-season="patrio"][data-theme="dark"] .hero,
+[data-season="patrio"][data-theme="dark"] .site-footer {
+    --brand-navy: #102744;
+    --brand-blue: #123a64;
+    --surface-secondary: #172438;
+    --glow-soft: rgba(69, 156, 255, .12);
+    --glow-strong: rgba(69, 156, 255, .28);
+}
+
+[data-season="patrio"] .hero { padding-top: 22px; }
+/* Mi Aula: verde, blanco y rojo, con contraste propio para cada modo. */
+[data-season="patrio"] .service-card--classroom[data-semestre="1"] { --classroom-accent: #086044; --classroom-soft: #e9f5ee; }
+[data-season="patrio"] .service-card--classroom[data-semestre="3"] { --classroom-accent: #3f5248; --classroom-soft: #fffefa; }
+[data-season="patrio"] .service-card--classroom[data-semestre="5"] { --classroom-accent: #a32438; --classroom-soft: #fff0f1; }
+[data-season="patrio"][data-theme="dark"] .service-card--classroom[data-semestre="1"] { --classroom-accent: #9ae3b9; --classroom-soft: #163928; }
+[data-season="patrio"][data-theme="dark"] .service-card--classroom[data-semestre="3"] { --classroom-accent: #243e31; --classroom-soft: #f5f4ea; }
+[data-season="patrio"][data-theme="dark"] .service-card--classroom[data-semestre="5"] { --classroom-accent: #ffacb6; --classroom-soft: #3c2028; }
+[data-season="patrio"] .service-card--classroom::before { background: var(--patrio-tricolor); }
+
+@media (max-width: 1050px) {
+    [data-season="patrio"] .patrio-banner__seal { display: none; }
+    [data-season="patrio"] .patrio-banner__copy { padding-right: 120px; }
+}
+@media (max-width: 650px) {
+    [data-season="patrio"] .patrio-banner { gap: 16px; margin-top: 18px; padding: 20px 18px; border-radius: 16px; }
+    [data-season="patrio"] .patrio-banner__flag { padding: 4px; }
+    [data-season="patrio"] .patrio-banner__flag img { width: 56px; height: 42px; }
+    [data-season="patrio"] .patrio-banner__copy { padding-right: 0; }
+    [data-season="patrio"] .patrio-banner__eyebrow { font-size: 8px; letter-spacing: .12em; }
+    [data-season="patrio"] .patrio-banner h2 { font-size: 25px; }
+    [data-season="patrio"] .patrio-banner__copy > p:last-child { max-width: 31ch; font-size: 11px; }
+    [data-season="patrio"] .patrio-papel { right: -30px; top: -10px; width: 130px; opacity: .08; }
+    [data-season="patrio"] .hero { padding-top: 18px; }
+
+}
+@media (prefers-reduced-motion: no-preference) {
+    [data-season="patrio"] .patrio-banner__flag { animation: patrio-flag-sway 5s ease-in-out 3; }
+    [data-season="patrio"] .patrio-papel { transform-origin: 50% 0; animation: patrio-paper-sway 7s ease-in-out 3; }
+    @keyframes patrio-flag-sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(1deg) translateY(-2px); } }
+    @keyframes patrio-paper-sway { 0%, 100% { transform: rotate(8deg); } 50% { transform: rotate(4deg); } }
+}
+@media (forced-colors: active) {
+    [data-season="patrio"] .patrio-papel { display: none; }
+    [data-season="patrio"] .patrio-banner { border-color: CanvasText; }
+}
