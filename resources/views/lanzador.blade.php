@@ -29,7 +29,7 @@
         <i>“Si Chucky hizo todo eso sin pilas, imagínate lo que tú puedes lograr si sí <b>te pones las pilas.</b>”</i>
     </div>
     <div class="row">
-    @foreach ($actividades as $actividad):
+    @foreach ($actividades as $actividad)
 
         <div class="col-md-6 col-lg-6 mb-4">
             <div class="card shadow-sm">
