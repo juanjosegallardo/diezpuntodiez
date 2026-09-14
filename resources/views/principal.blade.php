@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="light" data-season="patrio">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -3221,6 +3221,7 @@
     <link rel="stylesheet" href="{{ asset('css/agenda.css') }}">
     <script src="{{ asset('js/agenda.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/examenes.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mes-patrio.css') }}">
 </head>
 <body>
     <div class="portal-content" id="portalContent">
@@ -3231,7 +3232,7 @@
     <header class="topbar" id="topbar">
         <div class="topbar__inner container">
             <a class="brand" href="#inicio" aria-label="Volver al inicio de CECyTEG">
-                <div class="brand__logo"><img class="brand__mark" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato"></div>
+                <div class="brand__logo"><span class="patrio-logo"><img class="brand__mark" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato"></span></div>
                 <div class="brand__label">
                     <span>Plantel Pénjamo</span>
                 </div>
@@ -3266,6 +3267,7 @@
     </header>
 
     <main>
+        @include('partials.mes-patrio')
         <section class="hero" id="inicio" tabindex="-1">
             <div class="hero__inner container">
                 <div class="hero__copy">
@@ -3543,7 +3545,7 @@
     <footer class="site-footer">
         <div class="site-footer__inner container">
             <div class="site-footer__brand">
-                <img class="site-footer__logo" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato" width="2837" height="854" loading="lazy" decoding="async">
+                <span class="patrio-logo patrio-logo--footer"><img class="site-footer__logo" src="{{  asset('images/logo.png')}}" alt="CECyTEG Guanajuato" width="2837" height="854" loading="lazy" decoding="async"></span>
                 <span class="site-footer__title">Plantel Pénjamo</span>
                 <span class="site-footer__sub">Comunidad estudiantil · Guanajuato</span>
             </div>
