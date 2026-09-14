@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActividadController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RegistroController;
@@ -9,6 +10,9 @@ use App\Http\Controllers\UsuarioController;
 Route::get('/logout', [UsuarioController::class, "logout"]);
 
 Route::get('/me', [RegistroController::class, "me"]);
+
+
+Route::get("/actividades/{id}/seb",[ActividadController::class, "seb"]);
 
 Route::get('/ok', function () {
     return view('bienvenido');

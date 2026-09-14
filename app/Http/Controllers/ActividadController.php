@@ -7,6 +7,20 @@ use Illuminate\Http\Request;
 
 class ActividadController extends Controller
 {
+
+    public function seb($id)
+    {
+        $actividad = Actividad::findOrFail($id);
+
+        return response()
+            ->view('seb', ['actividad' => $actividad])
+            ->header('Content-Type', 'application/x-seb')
+            ->header('Content-Disposition', 'attachment; filename="conf.seb"')
+            ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', '0');
+    }
+
     public function index()
     {
         return Actividad::whereRaw(

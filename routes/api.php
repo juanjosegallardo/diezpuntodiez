@@ -20,6 +20,7 @@ Route::get("/users/id",[UsuarioController::class, "obtenerPropiedades"]);
 
 Route::get("/actividades",[ActividadController::class, "index"]);
 
+
 Route::get("/prestamos", [PrestamoController::class, "index"]);
 
 Route::get("/registro", [RegistroController::class, "registro"]);
