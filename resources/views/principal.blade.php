@@ -3648,6 +3648,7 @@
                     </div>
                 </a>
 
+<<<<<<< HEAD
                 <nav class="nav" id="mainNav" aria-label="Navegación principal">
                     <a href="#inicio" class="nav__link is-active"><svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                             <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" />
@@ -3670,6 +3671,58 @@
                             <path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 4h.01" />
                         </svg><span>Acceso</span></a>
                 </nav>
+=======
+    <main>
+        @include('partials.mes-patrio')
+        <section class="hero" id="inicio" tabindex="-1">
+            <div class="hero__inner container">
+                <div class="hero__copy">
+                    <p class="hero__eyebrow"><img class="hero__emblem" src="{{ asset('images/logo_bola.png')}}" alt="" width="240" height="240" decoding="async"> CECyTEG · Plantel Pénjamo</p>
+                    <h1 class="hero__title">Tu comunidad,<br><span>en un solo lugar.</span></h1>
+                    <p class="hero__text">Encuentra los servicios de tu plantel en un solo lugar.</p>
+                    <div class="hero__resources" role="group" aria-label="Acceso a la red del plantel">
+                        <a class="resource-link resource-link--app" href="http://10.20.0.1:1000/login?" aria-describedby="packet-tracer-note">
+                            <span class="resource-link__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
+                            <span class="resource-link__body">
+                                <span class="resource-link__type">Registro</span>
+                                <span class="resource-link__title">Iniciar Sesión</span>
+                            </span>
+                        </a>
+                        <a class="resource-link" href="http://10.10.10.10:8000/logout" target="_blank" rel="noopener noreferrer">
+                            <span class="resource-link__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></span>
+                            <span class="resource-link__body">
+                                <span class="resource-link__type">Registro</span>
+                                <span class="resource-link__title">Cerrar Sesión</span>
+                            </span>
+                            <span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                    </div>
+                    <p class="hero__resource-note" id="packet-tracer-note">Conéctate a la red del plantel para iniciar o cerrar tu sesión de internet.</p>
+                    <div class="hero__actions">
+                       <!-- <a href="#examenes" class="hero__secondary-link hero__secondary-link--exam">Ver exámenes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                        <a href="#servicios" class="hero__secondary-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                        <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>-->
+                        <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
+                    </div>
+                    <details class="packet-help" id="packetTracerHelp">
+                        <summary>¿Packet Tracer no abre?</summary>
+                        <div class="packet-help__content">
+                            <p>El icono de la barra superior abre la aplicación instalada. En Windows, descarga y ejecuta este configurador una vez para tu usuario; después vuelve al icono y acepta el aviso del navegador.</p>
+                            <a class="packet-help__download" href="{{ asset('downloads/configurar-packet-tracer.ps1') }}" download="configurar-packet-tracer.ps1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>Descargar configurador para Windows</a>
+                            <p>Requiere Packet Tracer instalado. Si tu equipo bloquea la configuración, solicita ayuda al Centro de Cómputo. En macOS o Linux, abre la app desde el menú de aplicaciones.</p>
+                        </div>
+                    </details>
+                </div>
+                <figure class="hero__visual">
+                    <div class="hero__photo">
+                        <img src="{{ asset('images/plantel-hero.jpg') }}" alt="Patio y edificios del plantel CECyTEG Pénjamo" width="387" height="516" fetchpriority="high" decoding="async">
+                        <span class="hero__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Pénjamo, Guanajuato</span>
+                    </div>
+                    <figcaption class="hero__caption"><span class="hero__caption-label">Nuestra comunidad</span><strong>CECyTEG Plantel Pénjamo</strong></figcaption>
+                </figure>
+            </div>
+        </section>
+>>>>>>> 494a1d6f47ff9981157808d2196036fff7d33c0e
 
                 <div class="topbar__actions">
                     <button class="icon-btn theme-toggle tooltip" id="themeSwitch" type="button" aria-label="Modo oscuro" aria-pressed="false" data-tooltip="Cambiar a modo oscuro">
@@ -3682,6 +3735,7 @@
                         </svg>
                     </button>
 
+<<<<<<< HEAD
                     <a class="icon-btn tooltip" href="cecyteg-packettracer://abrir" aria-label="Abrir Cisco Packet Tracer instalado" data-tooltip="Abrir Packet Tracer">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                             <rect x="8" y="2" width="8" height="6" rx="1.5" />
@@ -3702,6 +3756,201 @@
                     <button class="hamburger" id="hamburgerBtn" aria-controls="mainNav" aria-label="Abrir menú" aria-expanded="false">
                         <span></span><span></span><span></span>
                     </button>
+=======
+        <section class="quick-access container" id="servicios" tabindex="-1" aria-labelledby="quick-title">
+            <div class="section-head">
+                <p class="section-eyebrow">Servicios estudiantiles</p>
+                <h2 id="quick-title">¿Qué necesitas hacer hoy?</h2>
+                <p>Consulta tu información académica y tu correo institucional.</p>
+            </div>
+            <div class="services__frequent">
+                
+                        <a class="service-card service-card--lg service-card--classroom" data-semestre="1" href="https://miaula1.cecyteg.edu.mx" target="_blank" rel="noopener noreferrer">
+                            <span class="service-card__icon semester-mark" aria-hidden="true">1°</span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Mi Aula Primero</span>
+                                <span class="service-card__desc">Accede a Mi Aula Primero</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg service-card--classroom" data-semestre="3" href="https://miaula3.cecyteg.edu.mx" target="_blank" rel="noopener noreferrer">
+                            <span class="service-card__icon semester-mark" aria-hidden="true">3°</span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Mi Aula Tercero</span>
+                                <span class="service-card__desc">Accede a Mi Aula Tercero</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg service-card--classroom" data-semestre="5" href="https://miaula5.cecyteg.edu.mx" target="_blank" rel="noopener noreferrer">
+                            <span class="service-card__icon semester-mark" aria-hidden="true">5°</span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Mi Aula Quinto</span>
+                                <span class="service-card__desc">Accede a Mi Aula Quinto</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg" href="http://10.10.10.10:8000/lanzador" target="_blank" rel="noopener">
+                            <span class="service-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9H21"/><path d="M8 14H16"/></svg>
+                            </span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Examenes departamentales</span>
+                                <span class="service-card__desc">Accede al los exámenes</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg" href="http://10.10.10.10:8000/me?url=correo" target="_blank" rel="noopener">
+                            <span class="service-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7L12 13L21 7"/></svg>
+                            </span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Correo Electrónico</span>
+                                <span class="service-card__desc">Accede a tu correo institucional</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card service-card--lg" href="https://sae.cecyteg.edu.mx/PortalAlumno/Account/Login" target="_blank" rel="noopener">
+                            <span class="service-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9H21"/><path d="M8 14H16"/></svg>
+                            </span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Portal SAE</span>
+                                <span class="service-card__desc">Accede al portal estudiantil SAE</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+
+            </div>
+        </section>
+
+        <section class="content" aria-label="Directorio de servicios y agenda del dia">
+            <div class="content__inner container">
+                <div class="services">
+                    <div class="section-head">
+                        <h2>Servicios para tu día a día</h2>
+                        <p>Encuentra tus trámites y herramientas por categoría.</p>
+                    </div>
+
+                    <section class="services__group">
+                        <h3>Académicos y aprendizaje</h3>
+                        <div class="services__grid">
+                        <a class="service-card" href="http://10.10.10.10:8000/me?url=superate" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2L14.4 8.5L21.5 9.2L16.2 13.9L17.8 21L12 17.3L6.2 21L7.8 13.9L2.5 9.2L9.6 8.5L12 2Z"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Súperate</span>
+                                <span class="service-card__desc">Desarrolla tus habilidades y competencias</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card" href="http://10.10.10.10:8000/lanzador" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9H15V15H9V9Z"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Exámenes</span>
+                                <span class="service-card__desc">Información y registro de exámenes</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card" href="http://10.10.10.10/lanzador/index.php?planb" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12C4 7.58 7.58 4 12 4C14.5 4 16.73 5.15 18.2 6.94"/><path d="M18 3V7H14"/><path d="M20 12C20 16.42 16.42 20 12 20C9.5 20 7.27 18.85 5.8 17.06"/><path d="M6 21V17H10"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Plan B</span>
+                                <span class="service-card__desc">Opciones de continuidad y alternativas</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card" href="https://vr.vex.com/" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8C4 6.9 4.9 6 6 6H18C19.1 6 20 6.9 20 8V15C20 16.1 19.1 17 18 17H15.5L14 19.5C13.6 20.17 12.4 20.17 12 19.5L10.5 17H6C4.9 17 4 16.1 4 15V8Z"/><circle cx="9" cy="11.5" r="1.5"/><circle cx="15" cy="11.5" r="1.5"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">VR VEX</span>
+                                <span class="service-card__desc">Accede a experiencias de realidad virtual VEX</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        </div>
+                    </section>
+                    <section class="services__group">
+                        <h3>Trámites y documentos</h3>
+                        <div class="services__grid">
+                        <a class="service-card" href="http://10.10.10.10:8000/me?url=suredsu" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8H16"/><path d="M8 12H16"/><path d="M8 16H12"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">SUREDSU</span>
+                                <span class="service-card__desc">Sistema Único de Registro de Educación Superior</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card" href="http://10.10.10.10:8000/me?url=imss" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21C12 21 4 15.5 4 9.5C4 6.5 6.5 4.5 9 4.5C10.5 4.5 11.5 5.2 12 6C12.5 5.2 13.5 4.5 15 4.5C17.5 4.5 20 6.5 20 9.5C20 15.5 12 21 12 21Z"/><path d="M9 11H15"/><path d="M12 8V14"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Carátula IMSS</span>
+                                <span class="service-card__desc">Genera tu carátula para servicios médicos</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card" href="https://app.cecyteg.edu.mx/CampusCECyTEG" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 16C5 14.5 6.5 13.5 8 13.5C9.5 13.5 11 14.5 11 16"/><path d="M14 10H18"/><path d="M14 13H18"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Credencial Digital</span>
+                                <span class="service-card__desc">Visualiza tu credencial institucional</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        </div>
+                    </section>
+                    <section class="services__group">
+                        <h3>Herramientas y acceso institucional</h3>
+                        <div class="services__grid">
+                        <a class="service-card" href="http://10.10.10.10:8000/busqueda" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M21 21L16.5 16.5"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Buscar datos</span>
+                                <span class="service-card__desc">Consulta información y registros</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        <a class="service-card" href="https://encuestas.sh.guanajuato.gob.mx/#/enc/..." target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 12H16"/><path d="M8 16H13"/><path d="M17 3L21 7L11 17H7V13L17 3Z"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Encuesta Percepción Ciudadana</span>
+                                <span class="service-card__desc">Tu opinión ayuda a mejorar</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="sidebar" id="avisos" tabindex="-1">
+                    <!-- @include('partials.agenda') -->
+                    <div class="help-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3m.1 4h.01"/></svg>
+                        <h3>¿Necesitas orientación?</h3>
+                        <p>Encuentra respuestas sobre calificaciones, credenciales y acceso al portal.</p>
+                        <a href="mailto:juangallardo@cecyteg.edu.mx">Contactar al Centro de Cómputo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="schedules-section container" id="horarios" tabindex="-1" aria-labelledby="schedules-title">
+            <div class="section-head">
+                <p class="section-eyebrow">Tu tiempo, bien organizado</p>
+                <h2 id="schedules-title">Horarios por grupo y docente</h2>
+                <p>Encuentra tu grupo o busca a tu docente para consultar su horario.</p>
+            </div>
+            <div class="schedule-browser">
+                <div class="schedule-filters" role="group" aria-label="Tipo de horario">
+                    <button class="schedule-filter" type="button" data-schedule-filter="grupos" aria-pressed="true" aria-controls="scheduleResults">Grupos <span class="schedule-filter__count" data-schedule-count="grupos">20</span></button>
+                    <button class="schedule-filter" type="button" data-schedule-filter="docentes" aria-pressed="false" aria-controls="scheduleResults">Docentes <span class="schedule-filter__count" data-schedule-count="docentes">0</span></button>
+                </div>
+                <div class="schedule-search" role="search" aria-label="Buscar horarios">
+                    <label class="schedule-search__label" id="scheduleSearchLabel" for="scheduleSearch">Buscar por grupo</label>
+                    <div class="schedule-search__field">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+                        <input type="search" id="scheduleSearch" placeholder="Ej. 2901" inputmode="numeric" autocomplete="off" spellcheck="false" aria-describedby="scheduleSearchHint" aria-controls="scheduleResults">
+                        <button class="schedule-search__clear" id="scheduleSearchClear" type="button" aria-label="Limpiar búsqueda" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+                    </div>
+                    <p class="schedule-search__hint" id="scheduleSearchHint">Escribe el número completo o una parte para encontrar tu grupo.</p>
+>>>>>>> 494a1d6f47ff9981157808d2196036fff7d33c0e
                 </div>
             </div>
         </header>
