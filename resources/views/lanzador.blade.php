@@ -43,9 +43,9 @@
                         Abrir Examen Mi Aula
                     </a>
 
-                    <a href="seb://10.10.10.10:8000/actividades/{{ $actividad["id"] }}/seb?respaldo=true" class="btn btn-primary">
+                    <!--<a href="seb://10.10.10.10:8000/actividades/{{ $actividad["id"] }}/seb?respaldo=true" class="btn btn-primary">
                         Abrir Examen Formularios
-                    </a>
+                    </a>-->
 
 
                     

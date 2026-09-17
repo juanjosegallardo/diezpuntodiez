@@ -3292,12 +3292,12 @@
                         </a>
                     </div>
                     <p class="hero__resource-note" id="packet-tracer-note">Conéctate a la red del plantel para iniciar o cerrar tu sesión de internet.</p>
-                    <!--<div class="hero__actions">
-                        <a href="#examenes" class="hero__secondary-link hero__secondary-link--exam">Ver exámenes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    <div class="hero__actions">
+                       <!-- <a href="#examenes" class="hero__secondary-link hero__secondary-link--exam">Ver exámenes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
                         <a href="#servicios" class="hero__secondary-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-                        <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>
+                        <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>-->
                         <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
-                    </div>-->
+                    </div>
                     <details class="packet-help" id="packetTracerHelp">
                         <summary>¿Packet Tracer no abre?</summary>
                         <div class="packet-help__content">

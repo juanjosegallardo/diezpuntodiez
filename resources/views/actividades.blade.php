@@ -561,6 +561,13 @@ textarea { min-height: 100px; resize: vertical; }
                     Aula B
                     </option>
 
+                    <option value="Taller Mantenimiento">
+                        Taller
+                    </option>
+                    <option value="Taller Mantenimiento">
+                        Cisco
+                    </option>
+
                     </select>
                 </div>
                 <div class="fel">
