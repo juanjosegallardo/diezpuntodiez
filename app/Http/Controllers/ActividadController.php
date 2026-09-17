@@ -101,3 +101,4 @@ class ActividadController extends Controller
         ], 201);
     }
 }
+
