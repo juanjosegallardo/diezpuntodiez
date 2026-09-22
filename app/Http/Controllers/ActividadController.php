@@ -46,7 +46,7 @@ class ActividadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'semestre'   => 'required|integer',
+            'semestre'   => 'required',
             'grupo'      => 'required|string|max:255',
             'carrera'    => 'required|string|max:255',
             'asignatura' => 'required|string|max:255',

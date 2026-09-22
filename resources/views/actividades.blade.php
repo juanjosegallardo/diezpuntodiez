@@ -383,7 +383,9 @@ textarea { min-height: 100px; resize: vertical; }
                     <option value="6">
                     6°
                     </option>
-
+                     <option value="varios">
+                    Varios
+                    </option>
                     </select>
                 </div>
                 <div class="fel">
@@ -437,7 +439,9 @@ textarea { min-height: 100px; resize: vertical; }
                     <option value="Mantenimiento Industrial">
                     Mantenimiento Industrial
                     </option>
-
+                    <option value="Varias">
+                    Varias
+                    </option>
                     </select>
                 </div>
                 <div class="fel field-wide">

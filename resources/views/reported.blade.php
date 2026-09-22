@@ -25,6 +25,13 @@
         margin: 0;
     }
 
+    .sin-borde
+    {
+        border: none !important;     
+        padding: 0;                 
+        margin: 0;  
+    }
+
 
     footer {
         position: fixed;
@@ -78,45 +85,67 @@
             <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/cecyteg.png'))) }}" alt="Logo" style="width:35px;">
 
         </th>
-        <th  width="85%" align="center">REGISTRO DE HORAS PRÁCTICA EN CENTRO DE CÓMPUTO</th>
+        <th  width="85%" align="center">REGISTRO DE HORAS PRÁCTICA EN LABORATORIOS, TALLERES Y CENTROS DE CÓMPUTO</th>
         <th  width="7%" align="center">
             CÓDIGO: <br>
-            FO236-004/C
+            FO236-004/D
         </th>
     </tr>
 </table>
 <div align="left">
 <br>
-Unidad Académica: <u>Pénjamo</u>
+
+<table width="100%" class="sin-borde" >
+    <tr class="sin-borde">
+        <td class="sin-borde">Unidad<br> Académica: <u>Pénjamo</u></td>
+        <td class="sin-borde">
+            <table width="100px"  class="sin-borde">
+                <tr  class="sin-borde">
+                    <td  class="sin-borde">Laboratorio: </td>
+                    <td ></td>
+                </tr>
+                    
+                <tr>
+                    <td  class="sin-borde">Taller: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td  class="sin-borde">Centro de cómputo</td>
+                    <td>X</td>
+                </tr>
+            
+            </table>
+
+        </td>
+    </tr>
+</table>
 <br><br>
 <table border="1" cellpading="0" cellspacing="0" width="100%">
+ 
 
         <tr class="cabecera">
-            <th  style="height: 40px;"  width="3%" rowspan="2 align="center"">No.</th>
-            <th  width="5%" rowspan="2" align="center">FECHA</th>
-            <th  width="20%" rowspan="2" align="center">NOMBRE</th>
-            <th  colspan="4" align="center">USUARIO</th>
-            <th  width="4%" rowspan="2"  align="center">HORA DE ENTRADA</th>
-            <th  width="4%" rowspan="2" align="center">HORA DE SALIDA</th>
-            <th  width="4%" rowspan="2" align="center">GRUPO</th>
-            <th  width="5%" rowspan="2" align="center">No. EQUIPO</th>
-            <th  width="20%" rowspan="2" align="center">ACTIVIDAD</th>
-            <th colspan="2" align="center" align="center">¿USO INTERNET?</th>
-            <th  width="7%" rowspan="2 align="center"">OBSERVACIONES</th>
+            <th rowspan="2" style="height: 40px;"  width="3%" align="center">No.</th>
+            <th rowspan="2" width="5%" rowspan="2" align="center">Fecha</th>
+            <th rowspan="2" width="5%" rowspan="2" align="center">Nombre del usuario</th>
+            <th rowspan="2"colspan="4" align="center">Semestre</th>
+            <th rowspan="2" width="4%" rowspan="2"  align="center">Grupo</th>
+            <th rowspan="2" width="4%" rowspan="2" align="center">Carrera</th>
+            <th rowspan="2" width="4%" rowspan="2" align="center">UAC, Asignatura, Módulo o Submódulo</th>
+            <th colspan="4">Tipo de usuario</th>
+
+            <th colspan="2" align="center">Actividad o nombre de la práctica</th>
+            <th colspan="2"  width="5%" rowspan="2" align="center">Hora de entrada</th>
+            <th colspan="2"  width="5%" rowspan="2" align="center">Hora de salida</th>
+            <th  colspan="2" width="5%" rowspan="2" align="center">No. Equipo de Cómputo</th>
+            <th colspan="2"  width="5%" rowspan="2" align="center">Observaciones</th>
 
         </tr>
-        <tr  class="subcabecera">
-
-            <td  width="4%" align="center">ALUMNO</td>
-            <td  width="4%" align="center">DOCENTE</td>
-            <td  width="4%" align="center">ADMIN</td>
-            <td  width="4%" align="center">EXTERNO</td>
-
-            <td  width="4%" align="center">SI</td>
-            <td  width="4%" align="center">NO</td>
-
+        <tr>
+            <th  width="5%" rowspan="2" align="center">ESTUDIANTE</th>
+            <th  width="5%" rowspan="2" align="center">DOCENTE</th>
+            <th  width="5%" rowspan="2" align="center">ADMVO</th>
+            <th  width="5%" rowspan="2" align="center">EXTERNO</th>
         </tr>
-
     </table>
 
 </div>
