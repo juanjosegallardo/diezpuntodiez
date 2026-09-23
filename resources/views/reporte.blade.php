@@ -160,7 +160,7 @@ Unidad Académica: <u>Pénjamo</u>
             <td width="4%" align="center">{{ $registro->ended_at->timezone('America/Mexico_City')->format('H:i') }}</td>
             <td width="4%" align="center">{{ $registro->usuario->grupo }}</td>
             <td width="5%" align="center">{{ $registro->ip }}</td>
-            <td width="20%" align="center">{{ $registro->actividad }}</td>
+            <td width="20%" align="center">{{ $registro->actividad_legacy }}</td>
             <td width="4%" align="center">X</td>
             <td width="4%"></td>
             <td width="7%"></td>

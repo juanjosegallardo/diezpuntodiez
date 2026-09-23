@@ -3433,14 +3433,6 @@
                     <section class="services__group">
                         <h3>Trámites y documentos</h3>
                         <div class="services__grid">
-                        <a class="service-card" href="http://10.10.10.10:8000/me?url=suredsu" target="_blank" rel="noopener">
-                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8H16"/><path d="M8 12H16"/><path d="M8 16H12"/></svg></span>
-                            <span class="service-card__body">
-                                <span class="service-card__title">SUREDSU</span>
-                                <span class="service-card__desc">Sistema Único de Registro de Educación Superior</span>
-                            </span>
-                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
-                        </a>
                         <a class="service-card" href="http://10.10.10.10:8000/me?url=imss" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21C12 21 4 15.5 4 9.5C4 6.5 6.5 4.5 9 4.5C10.5 4.5 11.5 5.2 12 6C12.5 5.2 13.5 4.5 15 4.5C17.5 4.5 20 6.5 20 9.5C20 15.5 12 21 12 21Z"/><path d="M9 11H15"/><path d="M12 8V14"/></svg></span>
                             <span class="service-card__body">
@@ -3459,27 +3451,7 @@
                         </a>
                         </div>
                     </section>
-                    <section class="services__group">
-                        <h3>Herramientas y acceso institucional</h3>
-                        <div class="services__grid">
-                        <a class="service-card" href="http://10.10.10.10:8000/busqueda" target="_blank" rel="noopener">
-                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M21 21L16.5 16.5"/></svg></span>
-                            <span class="service-card__body">
-                                <span class="service-card__title">Buscar datos</span>
-                                <span class="service-card__desc">Consulta información y registros</span>
-                            </span>
-                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
-                        </a>
-                        <a class="service-card" href="https://encuestas.sh.guanajuato.gob.mx/#/enc/..." target="_blank" rel="noopener">
-                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 12H16"/><path d="M8 16H13"/><path d="M17 3L21 7L11 17H7V13L17 3Z"/></svg></span>
-                            <span class="service-card__body">
-                                <span class="service-card__title">Encuesta Percepción Ciudadana</span>
-                                <span class="service-card__desc">Tu opinión ayuda a mejorar</span>
-                            </span>
-                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
-                        </a>
-                        </div>
-                    </section>
+                    
                 </div>
 
                 <aside class="sidebar" id="avisos" tabindex="-1">

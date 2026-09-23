@@ -118,92 +118,171 @@
         </td>
     </tr>
 </table>
-<table  border="0" cellpading="0" cellspacing="0" width="100%">
-        <tr >
+<table   class="sin-borde"  border="0" cellpading="0" cellspacing="0" width="100%">
+        <tr  class="sin-borde"  >
             <th class="sin-borde" height="30px" colspan="3" class="sin-borde"></th>
             <th colspan="4" class="cabecera"> Para llenado exclusivo de Tallerista, Laboratorista y/o docente</th>
             <th class="sin-borde" colspan="9"</th>
         </tr>
 </table>
 
-<table border="1" cellpading="0" cellspacing="0" width="100%">
- 
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+    <tr class="cabecera">
+        <th width="2%" rowspan="2" style="height: 40px;" align="center">No.</th>
+        <th width="4%" rowspan="2" align="center">Fecha</th>
+        <th width="17%" rowspan="2" align="center">Nombre del usuario</th>
+        <th width="6%" rowspan="2" align="center">Semestre</th>
+        <th width="6%" rowspan="2" align="center">Grupo</th>
+        <th width="7%" rowspan="2" align="center">Carrera</th>
+        <th width="7%" rowspan="2" align="center">
+            UAC, Asignatura, Módulo o Submódulo
+        </th>
 
+        <th colspan="4" align="center">Tipo de usuario</th>
 
-        <tr class="cabecera">
-            <th rowspan="2" style="height: 40px;"  width="2%" align="center">No.</th>
-            <th rowspan="2" width="4%" rowspan="2" align="center">Fecha</th>
-            <th rowspan="2" width="17%" rowspan="2" align="center">Nombre del usuario</th>
-            <th rowspan="2" align="center" width="6%">Semestre</th>
-            <th rowspan="2" width="6%" rowspan="2"  align="center">Grupo</th>
-            <th rowspan="2" width="7%" rowspan="2" align="center">Carrera</th>
-            <th rowspan="2" width="7%" rowspan="2" align="center">UAC, Asignatura, Módulo o Submódulo</th>
-            <th colspan="4" width="12%">Tipo de usuario</th>
+        <th width="16%" rowspan="2" align="center">
+            Actividad o nombre de la práctica
+        </th>
+        <th width="5%" rowspan="2" align="center">Hora de entrada</th>
+        <th width="5%" rowspan="2" align="center">Hora de salida</th>
+        <th width="5%" rowspan="2" align="center">No. Equipo de Cómputo</th>
+        <th width="9%" rowspan="2" align="center">Observaciones</th>
+    </tr>
 
-            <th rowspan="2" align="center" width="16%">Actividad o nombre de la práctica</th>
-            <th width="5%" rowspan="2" align="center">Hora de entrada</th>
-            <th width="5%" rowspan="2" align="center">Hora de salida</th>
-            <th width="5%" rowspan="2" align="center">No. Equipo de Cómputo</th>
-            <th width="9%" rowspan="2" align="center">Observaciones</th>
-
-        </tr>
-        <tr>
-            <th  width="3%" rowspan="2" align="center">ESTUDIANTE</th>
-            <th  width="3%" rowspan="2" align="center">DOCENTE</th>
-            <th  width="3%" rowspan="2" align="center">ADMVO</th>
-            <th  width="3%" rowspan="2" align="center">EXTERNO</th>
-        </tr>
-    </table>
-
+    <tr>
+        <th width="3%" align="center">ES</th>
+        <th width="3%" align="center">DOC</th>
+        <th width="3%" align="center">AD</th>
+        <th width="3%" align="center">EX</th>
+    </tr>
+</table>
 </div>
 </header>
 
-<footer >
+<footer>
+
     <div style="position: absolute; top: -40px; left: 420px;">
-            <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/firma.png'))) }}" alt="Logo" style="width:135px;">
+        <img
+            src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/firma.png'))) }}"
+            alt="Firma"
+            style="width:135px;"
+        >
     </div>
 
-
     <div style="width:100%; text-align:center;">
-        <div style="display:inline-block; width:300px">
-                  <div style="width: 100%; border-bottom: #000 solid;">
+        <div style="display:inline-block; width:300px;">
+
+            <div style="width:100%; border-bottom:#000 solid 1px;">
                 Juan José Gallardo Mendoza
             </div>
-      
-          
-            Nombre y Firma del Programador de la Unidad Académica	
 
+            Nombre y Firma del Programador de la Unidad Académica
 
         </div>
-    </div>									
+    </div>
+
 </footer>
 
 <main>
-    <table border="1" cellpading="0" cellspacing="0" width="100%">
 
-        @php($no=1);
-        @foreach ( $registros as $registro )
+    <table border="1" cellpadding="0" cellspacing="0" width="100%">
 
-        <tr>
-            <td width="2%" align="center" >{{ $no++ }}</td>
-            <td width="4%" align="center">{{ $registro->created_at->timezone('America/Mexico_City')->format('d-m-Y') }}</td>
-            <td width="17%">&nbsp;{{ $registro->usuario->nombre }}</td>
-            <td width="6%" align="center">{{ $registro->usuario->tipo == "ALUMNO"?"X":"" }}</td>
-            <td width="6%" align="center">{{ $registro->usuario->tipo == "ADMINISTRATIVO"?"X":"" }}</td>
-            <td width="7%" align="center">{{ $registro->usuario->tipo == "DOCENTE"?"X":"" }}</td>
-            <td width="7%" align="center">{{ $registro->usuario->tipo == "EXTERNO"?"X":"" }}</td>
-            <td width="12%" align="center">{{ $registro->created_at->timezone('America/Mexico_City')->format('H:i') }}</td>
-            <td width="16%" align="center">{{ $registro->ended_at->timezone('America/Mexico_City')->format('H:i') }}</td>
-            <td width="5%" align="center">{{ $registro->usuario->grupo }}</td>
-            <td width="5%" align="center">{{ $registro->ip }}</td>
-            <td width="5%" align="center">{{ $registro->actividad }}</td>
-            <td width="5%" align="center">X</td>
-            <td width="5%"></td>
-            <td width="9%"></td>
-        </tr>
-                
+        @php($no = 1)
+
+        @foreach ($registros as $registro)
+
+            <tr>
+
+                {{-- No. --}}
+                <td width="2%" align="center">
+                    {{ $no++ }}
+                </td>
+
+                {{-- Fecha --}}
+                <td width="4%" align="center">
+                    {{ $registro->created_at
+                        ->timezone('America/Mexico_City')
+                        ->format('d-m-Y') }}
+                </td>
+
+                {{-- Nombre del usuario --}}
+                <td width="17%">
+                    &nbsp;{{ $registro->usuario->nombre }}
+                </td>
+
+                {{-- Semestre --}}
+                <td width="6%" align="center">
+
+                </td>
+
+                {{-- Grupo --}}
+                <td width="6%" align="center">
+                    {{ $registro->usuario->grupo  }}
+                </td>
+
+                {{-- Carrera --}}
+                <td width="7%" align="center">
+
+                </td>
+
+                {{-- UAC / Asignatura / Módulo / Submódulo --}}
+                <td width="7%" align="center">
+                </td>
+
+                {{-- Tipo de usuario --}}
+                <td width="3%" align="center">
+                    {{ $registro->usuario->tipo == 'ALUMNO' ? 'X' : '' }}
+                </td>
+
+                <td width="3%" align="center">
+                    {{ $registro->usuario->tipo == 'DOCENTE' ? 'X' : '' }}
+                </td>
+
+                <td width="3%" align="center">
+                    {{ $registro->usuario->tipo == 'ADMINISTRATIVO' ? 'X' : '' }}
+                </td>
+
+                <td width="3%" align="center">
+                    {{ $registro->usuario->tipo == 'EXTERNO' ? 'X' : '' }}
+                </td>
+
+                {{-- Actividad --}}
+                <td width="16%">
+                    {{ $registro->actividad->nombre ?? '' }}
+                </td>
+
+                {{-- Hora de entrada --}}
+                <td width="5%" align="center">
+                    {{ $registro->created_at
+                        ->timezone('America/Mexico_City')
+                        ->format('H:i') }}
+                </td>
+
+                {{-- Hora de salida --}}
+                <td width="5%" align="center">
+                    {{ $registro->ended_at
+                        ? $registro->ended_at
+                            ->timezone('America/Mexico_City')
+                            ->format('H:i')
+                        : '' }}
+                </td>
+
+                {{-- No. Equipo --}}
+                <td width="5%" align="center">
+                    {{ $registro->ip ?? '' }}
+                </td>
+
+                {{-- Observaciones --}}
+                <td width="9%">
+    
+                </td>
+
+            </tr>
+
         @endforeach
+
     </table>
+
 </main>
 
 

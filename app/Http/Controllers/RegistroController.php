@@ -46,11 +46,11 @@ class RegistroController extends Controller
         
         $registros = Registro::with(['usuario' => function ($query) {
             $query->withTrashed();
-        }])
+        }, "actividad"])
         ->filtrarFecha($dia, $mes, $anio)
         ->get();
         //return response()->json($registros);
-        
+        //return $registros;
         $pdf = Pdf::loadView('reported', compact('registros'))->setPaper('letter', 'landscape');
         return $pdf->stream('reporte_usuarios_d.pdf');
         
