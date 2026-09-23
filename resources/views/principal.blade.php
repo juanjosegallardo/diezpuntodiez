@@ -3585,10 +3585,13 @@
                         </div>
                         <figcaption><strong>Angel Escamilla</strong><span class="signature-role">Frontend</span></figcaption>
                     </figure>
-                    <figure class="signature-person signature-person--backend">
-                        <div class="signature-visual signature-logo"><img src="{{ asset('images/Juanjosoft.png') }}" alt="juanjosoft" width="1254" height="189" loading="lazy" decoding="async"></div>
-                        <figcaption><span class="signature-role">Backend</span></figcaption>
+                                        <figure class="signature-person">
+                        <div class="signature-visual">
+                            <span class="signature-photo"><span class="signature-photo__crop"><img src="{{ asset('images/juanjo.webp') }}" alt="Retrato de Juanjo" width="896" height="1600" loading="lazy" decoding="async"></span></span>
+                        </div>
+                        <figcaption><strong>Juanjosoft</strong><span class="signature-role">Backend</span></figcaption>
                     </figure>
+                   
                 </div>
             </div>
         </div>
