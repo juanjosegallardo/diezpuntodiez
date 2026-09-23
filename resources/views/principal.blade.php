@@ -3252,9 +3252,6 @@
                     <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></svg>
                 </button>
 
-                <a class="icon-btn tooltip" href="cecyteg-packettracer://abrir" aria-label="Abrir Cisco Packet Tracer instalado" data-tooltip="Abrir Packet Tracer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="6" rx="1.5"/><rect x="2" y="16" width="7" height="6" rx="1.5"/><rect x="15" y="16" width="7" height="6" rx="1.5"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg>
-                </a>
                 <a class="icon-btn tooltip" href="https://www.netacad.com/es/" target="_blank" rel="noopener noreferrer" aria-label="Cisco Networking Academy, abrir en otra pestaña" data-tooltip="Cisco NetAcad">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 8 10-5 10 5-10 5-10-5Z"/><path d="M6 10v6c4 3 8 3 12 0v-6M22 8v7"/></svg>
                 </a>
@@ -3291,21 +3288,11 @@
                             <span class="sr-only">Abre en otra pestaña</span>
                         </a>
                     </div>
-                    <p class="hero__resource-note" id="packet-tracer-note">Conéctate a la red del plantel para iniciar o cerrar tu sesión de internet.</p>
+                    <p class="hero__resource-note" id="packet-tracer-note">Para tener acceso a internet registra tu actividad.</p>
                     <div class="hero__actions">
-                        <a href="#examenes" class="hero__secondary-link hero__secondary-link--exam">Ver exámenes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-                        <a href="#servicios" class="hero__secondary-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-                        <a href="#avisos" class="hero__secondary-link">Ver actividades del dia</a>
-                        <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
+                             <a href="{{ url('/actividades') }}" class="hero__secondary-link">Registrar actividad</a>
                     </div>
-                    <details class="packet-help" id="packetTracerHelp">
-                        <summary>¿Packet Tracer no abre?</summary>
-                        <div class="packet-help__content">
-                            <p>El icono de la barra superior abre la aplicación instalada. En Windows, descarga y ejecuta este configurador una vez para tu usuario; después vuelve al icono y acepta el aviso del navegador.</p>
-                            <a class="packet-help__download" href="{{ asset('downloads/configurar-packet-tracer.ps1') }}" download="configurar-packet-tracer.ps1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>Descargar configurador para Windows</a>
-                            <p>Requiere Packet Tracer instalado. Si tu equipo bloquea la configuración, solicita ayuda al Centro de Cómputo. En macOS o Linux, abre la app desde el menú de aplicaciones.</p>
-                        </div>
-                    </details>
+                    
                 </div>
                 <figure class="hero__visual">
                     <div class="hero__photo">
@@ -3396,6 +3383,16 @@
                     <section class="services__group">
                         <h3>Académicos y aprendizaje</h3>
                         <div class="services__grid">
+
+                        <a class="service-card" href="http://10.10.10.10:8000/me?url=calificaciones" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2L14.4 8.5L21.5 9.2L16.2 13.9L17.8 21L12 17.3L6.2 21L7.8 13.9L2.5 9.2L9.6 8.5L12 2Z"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Portal Estudiantil</span>
+                                <span class="service-card__desc">Consulta tus calificaciones</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+                        
                         <a class="service-card" href="http://10.10.10.10:8000/me?url=superate" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2L14.4 8.5L21.5 9.2L16.2 13.9L17.8 21L12 17.3L6.2 21L7.8 13.9L2.5 9.2L9.6 8.5L12 2Z"/></svg></span>
                             <span class="service-card__body">
@@ -3404,6 +3401,8 @@
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
+
+
                         <a class="service-card" href="http://10.10.10.10:8000/lanzador" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9H15V15H9V9Z"/></svg></span>
                             <span class="service-card__body">

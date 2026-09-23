@@ -6,13 +6,13 @@
     <title>Document</title>
     <style>
     @page {
-        margin: 133px 25px 70px 25px; /* top, right, bottom, left */
+        margin: 200px 25px 70px 25px; /* top, right, bottom, left */
         font-size: 8px;
         font-family: Arial, Helvetica, sans-serif;
     }
     header {
         position: fixed;
-        top: -113px;
+        top: -160px;
         left: 0;
         right: 0;
         text-align: center;
@@ -47,7 +47,7 @@
     }
     .cabecera
     {
-        background-color: blue;
+        background-color: #0047a9;
         color: white;
 
     }
@@ -85,7 +85,7 @@
             <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/cecyteg.png'))) }}" alt="Logo" style="width:35px;">
 
         </th>
-        <th  width="85%" align="center">REGISTRO DE HORAS PRÁCTICA EN LABORATORIOS, TALLERES Y CENTROS DE CÓMPUTO</th>
+        <th width="85%" align="center">REGISTRO DE HORAS PRÁCTICA EN LABORATORIOS, TALLERES Y CENTROS DE CÓMPUTO</th>
         <th  width="7%" align="center">
             CÓDIGO: <br>
             FO236-004/D
@@ -93,24 +93,23 @@
     </tr>
 </table>
 <div align="left">
-<br>
 
 <table width="100%" class="sin-borde" >
     <tr class="sin-borde">
-        <td class="sin-borde">Unidad<br> Académica: <u>Pénjamo</u></td>
-        <td class="sin-borde">
+        <td width="80%"  class="sin-borde">Unidad<br> Académica: <u>Pénjamo</u></td>
+        <td  class="sin-borde">
             <table width="100px"  class="sin-borde">
                 <tr  class="sin-borde">
-                    <td  class="sin-borde">Laboratorio: </td>
+                    <td  align="right" class="sin-borde">Laboratorio: </td>
                     <td ></td>
                 </tr>
                     
                 <tr>
-                    <td  class="sin-borde">Taller: </td>
+                    <td  align="right" class="sin-borde">Taller: </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td  class="sin-borde">Centro de cómputo</td>
+                    <td  align="right" class="sin-borde">Centro de cómputo</td>
                     <td>X</td>
                 </tr>
             
@@ -119,32 +118,40 @@
         </td>
     </tr>
 </table>
-<br><br>
+<table  border="0" cellpading="0" cellspacing="0" width="100%">
+        <tr >
+            <th class="sin-borde" height="30px" colspan="3" class="sin-borde"></th>
+            <th colspan="4" class="cabecera"> Para llenado exclusivo de Tallerista, Laboratorista y/o docente</th>
+            <th class="sin-borde" colspan="9"</th>
+        </tr>
+</table>
+
 <table border="1" cellpading="0" cellspacing="0" width="100%">
  
 
-        <tr class="cabecera">
-            <th rowspan="2" style="height: 40px;"  width="3%" align="center">No.</th>
-            <th rowspan="2" width="5%" rowspan="2" align="center">Fecha</th>
-            <th rowspan="2" width="5%" rowspan="2" align="center">Nombre del usuario</th>
-            <th rowspan="2"colspan="4" align="center">Semestre</th>
-            <th rowspan="2" width="4%" rowspan="2"  align="center">Grupo</th>
-            <th rowspan="2" width="4%" rowspan="2" align="center">Carrera</th>
-            <th rowspan="2" width="4%" rowspan="2" align="center">UAC, Asignatura, Módulo o Submódulo</th>
-            <th colspan="4">Tipo de usuario</th>
 
-            <th colspan="2" align="center">Actividad o nombre de la práctica</th>
-            <th colspan="2"  width="5%" rowspan="2" align="center">Hora de entrada</th>
-            <th colspan="2"  width="5%" rowspan="2" align="center">Hora de salida</th>
-            <th  colspan="2" width="5%" rowspan="2" align="center">No. Equipo de Cómputo</th>
-            <th colspan="2"  width="5%" rowspan="2" align="center">Observaciones</th>
+        <tr class="cabecera">
+            <th rowspan="2" style="height: 40px;"  width="2%" align="center">No.</th>
+            <th rowspan="2" width="4%" rowspan="2" align="center">Fecha</th>
+            <th rowspan="2" width="17%" rowspan="2" align="center">Nombre del usuario</th>
+            <th rowspan="2" align="center" width="6%">Semestre</th>
+            <th rowspan="2" width="6%" rowspan="2"  align="center">Grupo</th>
+            <th rowspan="2" width="7%" rowspan="2" align="center">Carrera</th>
+            <th rowspan="2" width="7%" rowspan="2" align="center">UAC, Asignatura, Módulo o Submódulo</th>
+            <th colspan="4" width="12%">Tipo de usuario</th>
+
+            <th rowspan="2" align="center" width="16%">Actividad o nombre de la práctica</th>
+            <th width="5%" rowspan="2" align="center">Hora de entrada</th>
+            <th width="5%" rowspan="2" align="center">Hora de salida</th>
+            <th width="5%" rowspan="2" align="center">No. Equipo de Cómputo</th>
+            <th width="9%" rowspan="2" align="center">Observaciones</th>
 
         </tr>
         <tr>
-            <th  width="5%" rowspan="2" align="center">ESTUDIANTE</th>
-            <th  width="5%" rowspan="2" align="center">DOCENTE</th>
-            <th  width="5%" rowspan="2" align="center">ADMVO</th>
-            <th  width="5%" rowspan="2" align="center">EXTERNO</th>
+            <th  width="3%" rowspan="2" align="center">ESTUDIANTE</th>
+            <th  width="3%" rowspan="2" align="center">DOCENTE</th>
+            <th  width="3%" rowspan="2" align="center">ADMVO</th>
+            <th  width="3%" rowspan="2" align="center">EXTERNO</th>
         </tr>
     </table>
 
@@ -178,21 +185,21 @@
         @foreach ( $registros as $registro )
 
         <tr>
-            <td width="3%" align="center">{{ $no++ }}</td>
-            <td width="5%" align="center">{{ $registro->created_at->timezone('America/Mexico_City')->format('d-m-Y') }}</td>
-            <td width="20%">&nbsp;{{ $registro->usuario->nombre }}</td>
-            <td width="4%" align="center">{{ $registro->usuario->tipo == "ALUMNO"?"X":"" }}</td>
-            <td width="4%" align="center">{{ $registro->usuario->tipo == "ADMINISTRATIVO"?"X":"" }}</td>
-            <td width="4%" align="center">{{ $registro->usuario->tipo == "DOCENTE"?"X":"" }}</td>
-            <td width="4%" align="center">{{ $registro->usuario->tipo == "EXTERNO"?"X":"" }}</td>
-            <td width="4%" align="center">{{ $registro->created_at->timezone('America/Mexico_City')->format('H:i') }}</td>
-            <td width="4%" align="center">{{ $registro->ended_at->timezone('America/Mexico_City')->format('H:i') }}</td>
-            <td width="4%" align="center">{{ $registro->usuario->grupo }}</td>
+            <td width="2%" align="center" >{{ $no++ }}</td>
+            <td width="4%" align="center">{{ $registro->created_at->timezone('America/Mexico_City')->format('d-m-Y') }}</td>
+            <td width="17%">&nbsp;{{ $registro->usuario->nombre }}</td>
+            <td width="6%" align="center">{{ $registro->usuario->tipo == "ALUMNO"?"X":"" }}</td>
+            <td width="6%" align="center">{{ $registro->usuario->tipo == "ADMINISTRATIVO"?"X":"" }}</td>
+            <td width="7%" align="center">{{ $registro->usuario->tipo == "DOCENTE"?"X":"" }}</td>
+            <td width="7%" align="center">{{ $registro->usuario->tipo == "EXTERNO"?"X":"" }}</td>
+            <td width="12%" align="center">{{ $registro->created_at->timezone('America/Mexico_City')->format('H:i') }}</td>
+            <td width="16%" align="center">{{ $registro->ended_at->timezone('America/Mexico_City')->format('H:i') }}</td>
+            <td width="5%" align="center">{{ $registro->usuario->grupo }}</td>
             <td width="5%" align="center">{{ $registro->ip }}</td>
-            <td width="20%" align="center">{{ $registro->actividad }}</td>
-            <td width="4%" align="center">X</td>
-            <td width="4%"></td>
-            <td width="7%"></td>
+            <td width="5%" align="center">{{ $registro->actividad }}</td>
+            <td width="5%" align="center">X</td>
+            <td width="5%"></td>
+            <td width="9%"></td>
         </tr>
                 
         @endforeach
