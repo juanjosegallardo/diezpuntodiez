@@ -63,7 +63,7 @@ class UsuarioController extends Controller
             $registro->usuario_id= $usuario->id;
             $registro->ip = request()->ip();
             $registro->duracion =  $duraciones[$request->duracion];
-            $registro->actividad =  $request->actividad;
+            $registro->actividad_legacy =  $request->actividad;
             if (filter_var($request->actividad, FILTER_VALIDATE_INT) !== false) 
             {
                 $registro->actividad_id = $request->actividad;

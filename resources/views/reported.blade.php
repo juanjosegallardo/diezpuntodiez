@@ -72,7 +72,10 @@
     table.firma tr.linea td {
       border-top: 1px solid #000;
     }
-
+    .peque
+    {
+        font-size: 5px;
+    }
     </style>
 </head>
 <body>
@@ -118,15 +121,14 @@
         </td>
     </tr>
 </table>
-<table   class="sin-borde"  border="0" cellpading="0" cellspacing="0" width="100%">
-        <tr  class="sin-borde"  >
-            <th class="sin-borde" height="30px" colspan="3" class="sin-borde"></th>
-            <th colspan="4" class="cabecera"> Para llenado exclusivo de Tallerista, Laboratorista y/o docente</th>
-            <th class="sin-borde" colspan="9"</th>
-        </tr>
-</table>
 
-<table border="1" cellpadding="0" cellspacing="0" width="100%">
+
+<table class="sin-borde" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr  class="sin-borde"  >
+        <th colspan="3"  class="sin-borde" height="30px" class="sin-borde"></th>
+        <th colspan="4"   class="cabecera"> Para llenado exclusivo de Tallerista, Laboratorista y/o docente</th>
+        <th colspan="9"  class="sin-borde"></th>
+    </tr>
     <tr class="cabecera">
         <th width="2%" rowspan="2" style="height: 40px;" align="center">No.</th>
         <th width="4%" rowspan="2" align="center">Fecha</th>
@@ -150,10 +152,10 @@
     </tr>
 
     <tr>
-        <th width="3%" align="center">ES</th>
-        <th width="3%" align="center">DOC</th>
-        <th width="3%" align="center">AD</th>
-        <th width="3%" align="center">EX</th>
+        <th width="3%" class="peque" align="center">ESTUDIAN<br>TE</th>
+        <th width="3%" class="peque" align="center">DOCENTE</th>
+        <th width="3%" class="peque" align="center">ADMVO</th>
+        <th width="3%" class="peque" align="center">EXTERNO</th>
     </tr>
 </table>
 </div>
