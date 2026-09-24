@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light" data-season="patrio">
+<html lang="es" data-theme="light" data-season="halloween">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -3221,7 +3221,8 @@
     <link rel="stylesheet" href="{{ asset('css/agenda.css') }}">
     <script src="{{ asset('js/agenda.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/examenes.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/mes-patrio.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/eventos/halloween.css') }}">
+    <script src="{{ asset('js/eventos/halloween.js') }}" defer></script>
 </head>
 <body>
     <div class="portal-content" id="portalContent">
@@ -3264,7 +3265,7 @@
     </header>
 
     <main>
-        @include('partials.mes-patrio')
+        @include('partials.eventos.halloween')
         <section class="hero" id="inicio" tabindex="-1">
             <div class="hero__inner container">
                 <div class="hero__copy">
