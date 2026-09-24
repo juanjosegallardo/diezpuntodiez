@@ -44,8 +44,10 @@ Route::get('/busqueda', function () {
 
 
 Route::get("reporte",[RegistroController::class, "generarReporte"]);
-Route::get("practicas/versiones/c",[RegistroController::class, "generarReporte"]);
-Route::get("practicas/versiones/d",[RegistroController::class, "generarReporteD"]);
+Route::get("pdfs/usuarios/versiones/c",[RegistroController::class, "generarReporte"]);
+Route::get("pdfs/usuarios/versiones/d",[RegistroController::class, "generarReporteD"]);
+
+Route::get("pdfs/docentes/versiones/d",[RegistroController::class, "generarReporteDocentes"]);
 
 Route::get("accesos",[RegistroController::class, "generarReporteAccesos"]);
 Route::get("aceptacion",[RegistroController::class, "generarReporteAceptacion"]);

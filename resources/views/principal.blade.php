@@ -3384,6 +3384,7 @@
                         <h3>Académicos y aprendizaje</h3>
                         <div class="services__grid">
 
+                        
                         <a class="service-card" href="http://10.10.10.10:8000/me?url=calificaciones" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2L14.4 8.5L21.5 9.2L16.2 13.9L17.8 21L12 17.3L6.2 21L7.8 13.9L2.5 9.2L9.6 8.5L12 2Z"/></svg></span>
                             <span class="service-card__body">

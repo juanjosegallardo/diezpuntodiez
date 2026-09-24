@@ -53,10 +53,28 @@ class RegistroController extends Controller
         //return $registros;
         $pdf = Pdf::loadView('reported', compact('registros'))->setPaper('letter', 'landscape');
         return $pdf->stream('reporte_usuarios_d.pdf');
+    }
+
+
+   public function generarReporteDocentes(Request $request)
+    {
+        ini_set('max_execution_time', 600); // 300 segundos = 5 minutos
+        ini_set('memory_limit', '4096M'); // (opcional) aumenta el límite de memoria
+
+        $mes = $request->mes;
+        $anio =  $request->anio;
+        $dia =  $request->dia;
+
+        $actividades = Actividad::filtrarFecha($dia, $mes, $anio)->get();
+        //return response()->json($registros);
+        //return $registros;
+        $pdf = Pdf::loadView('reported', compact('actividades'))->setPaper('letter', 'landscape');
+        return $pdf->stream('reporte_docentes_d.pdf');
         
 
 
     }
+
 
    public function generarReporteAceptacion(Request $request)
     {

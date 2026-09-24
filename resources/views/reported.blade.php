@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
     @page {
-        margin: 200px 25px 70px 25px; /* top, right, bottom, left */
+        margin: 200px 25px 140px 25px; /* top, right, bottom, left */
         font-size: 8px;
         font-family: Arial, Helvetica, sans-serif;
     }
@@ -35,7 +35,7 @@
 
     footer {
         position: fixed;
-        bottom: -30px;
+        bottom: -40px;
         left: 0;
         right: 0;
         height: 30px;
@@ -162,26 +162,38 @@
 </header>
 
 <footer>
-
-    <div style="position: absolute; top: -40px; left: 420px;">
-        <img
-            src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/firma.png'))) }}"
-            alt="Firma"
-            style="width:135px;"
-        >
-    </div>
-
-    <div style="width:100%; text-align:center;">
-        <div style="display:inline-block; width:300px;">
-
-            <div style="width:100%; border-bottom:#000 solid 1px;">
-                Juan José Gallardo Mendoza
+<table class="sin-borde" style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 9px;">
+    <tr class="sin-borde">
+        <!-- ELABORÓ -->
+        <td class="sin-borde" style="width: 50%; text-align: center; vertical-align: top; padding: 0 20px;">
+            <div style="font-weight: bold; margin-bottom: 38px;">
+                ELABORÓ
             </div>
 
-            Nombre y Firma del Programador de la Unidad Académica
+            <div style="border-top: 1px solid #000; width: 70%; margin: 0 auto 4px auto;"></div>
 
-        </div>
-    </div>
+            <div style="font-size: 8px;">
+                Nombre y firma<br>
+                Encargado (a) de Laboratorio, taller o<br>
+                centro de cómputo
+            </div>
+        </td>
+
+        <!-- REVISÓ -->
+        <td  class="sin-borde" style="width: 50%; text-align: center; vertical-align: top; padding: 0 20px;">
+            <div style="font-weight: bold; margin-bottom: 38px;">
+                REVISÓ
+            </div>
+
+            <div style="border-top: 1px solid #000; width: 70%; margin: 0 auto 4px auto;"></div>
+
+            <div style="font-size: 8px;">
+                Nombre y firma<br>
+                Responsable de Docentes
+            </div>
+        </td>
+    </tr>
+</table>
 
 </footer>
 
@@ -190,6 +202,7 @@
     <table border="1" cellpadding="0" cellspacing="0" width="100%">
 
         @php($no = 1)
+        @if (isset($registros))
 
         @foreach ($registros as $registro)
 
@@ -201,7 +214,7 @@
                 </td>
 
                 {{-- Fecha --}}
-                <td width="4%" align="center">
+                <td width="4%" align="center" class="peque">
                     {{ $registro->created_at
                         ->timezone('America/Mexico_City')
                         ->format('d-m-Y') }}
@@ -282,6 +295,98 @@
             </tr>
 
         @endforeach
+                
+        @endif
+
+        @if(isset($actividades))
+        @foreach ($actividades as $actividad)
+
+            <tr>
+
+                {{-- No. --}}
+                <td width="2%" align="center">
+                    {{ $no++ }}
+                </td>
+
+                {{-- Fecha --}}
+                <td width="4%" align="center" class="peque">
+                    {{ $actividad->fecha_entrada }}
+                </td>
+
+                {{-- Nombre del usuario --}}
+                <td width="17%">
+                    &nbsp;{{ $actividad->profesor ?? "" }}
+                </td>
+
+                {{-- Semestre --}}
+                <td width="6%" align="center">
+                        {{ $actividad->semestre ?? ""  }}
+                </td>
+
+                {{-- Grupo --}}
+                <td width="6%" align="center">
+                    {{ $actividad->grupo ?? ""  }}
+                </td>
+
+                {{-- Carrera --}}
+                <td width="7%" align="center">
+                    {{ $actividad->carrera ?? ""  }}
+                </td>
+
+                {{-- UAC / Asignatura / Módulo / Submódulo --}}
+                <td width="7%" align="center">
+                     {{ $actividad->asignatura ?? ""  }}
+                </td>
+
+                {{-- Tipo de usuario --}}
+                <td width="3%" align="center">
+                  
+                </td>
+
+                <td width="3%" align="center">
+                    X
+                </td>
+
+                <td width="3%" align="center">
+                  
+                </td>
+
+                <td width="3%" align="center">
+                   
+                </td>
+
+                {{-- Actividad --}}
+                <td width="16%">
+                    {{ $actividad->nombre ?? '' }}
+                </td>
+
+                {{-- Hora de entrada --}}
+                <td width="5%" align="center">
+                    {{ $actividad->fecha_entrada->format('H:i') }}
+                </td>
+
+                {{-- Hora de salida --}}
+                <td width="5%" align="center">
+                    {{ $actividad->ended_at
+                        ? $actividad->ended_at
+                            ->format('H:i')
+                        : '' }}
+                </td>
+
+                {{-- No. Equipo --}}
+                <td width="5%" align="center">
+                    {{ $registro->ip ?? '' }}
+                </td>
+
+                {{-- Observaciones --}}
+                <td width="9%">
+    
+                </td>
+
+            </tr>
+
+        @endforeach
+        @endif
 
     </table>
 
