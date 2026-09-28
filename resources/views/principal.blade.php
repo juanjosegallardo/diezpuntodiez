@@ -3429,6 +3429,15 @@
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
+
+                         <a class="service-card" href="https://www.ratatype.com/typing-test/es/" target="_blank" rel="noopener">
+                            <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8C4 6.9 4.9 6 6 6H18C19.1 6 20 6.9 20 8V15C20 16.1 19.1 17 18 17H15.5L14 19.5C13.6 20.17 12.4 20.17 12 19.5L10.5 17H6C4.9 17 4 16.1 4 15V8Z"/><circle cx="9" cy="11.5" r="1.5"/><circle cx="15" cy="11.5" r="1.5"/></svg></span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Ratatype</span>
+                                <span class="service-card__desc">Practica tu escritura </span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
                         </div>
                     </section>
                     <section class="services__group">
