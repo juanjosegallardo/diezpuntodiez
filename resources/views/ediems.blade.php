@@ -46,7 +46,7 @@
         <div class="card p-5">
           <div class="text-center mb-4">
             <h1 class="mb-2">{{ $registro->usuario->nombre }}</h1>
-            <h2>Accede al Pretest EDIEMS</h2>
+            <h2>Accede a EDIEMS</h2>
           </div>
         <hr>
           <ol class="fs-5 ps-4">
@@ -94,7 +94,7 @@
     let ventanaBBVA = null;
     function abrirVentanaTornelo(e) {
       e.preventDefault();
-      const url = 'https://ingreso.cecyte.edu.mx/evaluaciontest';
+      const url = 'https://ingreso.cecyte.edu.mx/evaluacionposttest';
       if (!ventanaBBVA || ventanaBBVA.closed) {
         ventanaBBVA = window.open(url, 'superateBBVA');
       } else {

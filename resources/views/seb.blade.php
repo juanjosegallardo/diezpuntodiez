@@ -103,7 +103,7 @@
     <key>browserScreenKeyboard</key>
     <false />
     <key>newBrowserWindowByLinkPolicy</key>
-    <integer>2</integer>
+    <integer>0</integer>
     <key>newBrowserWindowByScriptPolicy</key>
     <integer>2</integer>
     <key>newBrowserWindowByLinkBlockForeign</key>

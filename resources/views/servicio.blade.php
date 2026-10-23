@@ -69,8 +69,8 @@
             
             <li>
               Copia la contrseña:
-              <button onclick="copiar('{{ $registro->usuario->password }}')" class="btn btn-sm btn-primary">
-                Copiar Contraseña
+                   <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['password_portal']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
+                    Copiar contraseña
               </button>
               y pégalo donde dice <b>“Contraseña”</b>.
             </li>
@@ -86,16 +86,19 @@
             </li>
             
             <li>
-              Haz click en <b>Subir actividades</b> para el Informe bimestral 1
+              Haz click en <b>Subir actividades</b> para el Informe bimestral  3
             </li>
+  
 
             <li>
                 Copia tu actividad 
+
                 
-                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['servicio_actividad1']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
-                    Copiar actividad primer informe
+                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['Reporte 3']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
+                    Copiar actividad tercer informe
               </button>
             </li>
+
 
              <li>
               Copia total de horas para este infrome:
@@ -105,36 +108,50 @@
               y pégalo donde dice <b>“Total de horas para este informe”</b>.
             </li>
 
+            
             <li>
-              Dar click en boton <b>“Guardar”</b>.
-            </li>
-
-
-            <li>
-              Haz click en <b>Subir actividades</b> para el Informe bimestral 2
-            </li>
-
-            <li>
-                Copia tu actividad 
+                Copia las actividades generales realizadas para el informe final
 
                 
-                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['servicio_actividad2']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
-                    Copiar actividad segundo informe
+                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['Reporte 3']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
+                    Copiar actividades informe final
+              </button>
+            </li>
+
+
+            <li>
+                Copia lo que aporté a la institucion
+
+                
+                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['Que aporté']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
+                    Copiar  que aporté
               </button>
             </li>
 
              <li>
-              Copia total de horas para este infrome:
-              <button onclick="copiar('160')" class="btn btn-sm btn-primary">
-                Copiar horas
+                Copia lo que aprendí
+
+                
+                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['Que aprendí']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
+                    Copiar que aprendí
               </button>
-              y pégalo donde dice <b>“Total de horas para este informe”</b>.
             </li>
+
+
+            
+             <li>
+                Copia lo que aportó
+
+                
+                <button   onclick="copiar(this.dataset.texto)" data-texto="{{ $registro->usuario->datos['Que me aportó CECYTEG']['valor'] ?? '' }}"  class="btn btn-sm btn-primary">
+                    Copiar que aportó
+              </button>
+            </li>
+
 
             <li>
               Dar click en boton <b>“Guardar”</b>.
             </li>
-
             
           </ol>
         </div>
@@ -190,7 +207,7 @@
     let portalEstudiantil = null;
     function abrirPortalEstudiantil(e) {
       e.preventDefault();
-      const url = 'https://sae.cecyteg.edu.mx:4046/PortalAlumno/Account/Login';
+      const url = 'https://sae.cecyteg.edu.mx/PortalAlumno/Account/Login';
       if (!portalEstudiantil || portalEstudiantil.closed) {
         portalEstudiantil = window.open(url, 'superateBBVA');
       } else {

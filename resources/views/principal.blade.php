@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Servicios, trámites, recursos académicos y avisos para la comunidad estudiantil de CECyTEG Plantel Pénjamo, Guanajuato.">
-    <title>Portal Estudiantil · CECyTEG Pénjamo</title>
+    <title>CECyTEG Pénjamo</title>
     <link rel="icon" type="image/png" sizes="240x240" href="{{ asset('images/logo_bola.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/logo_bola.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3221,7 +3221,7 @@
     <link rel="stylesheet" href="{{ asset('css/agenda.css') }}">
     <script src="{{ asset('js/agenda.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/examenes.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/mes-patrio.css') }}">
+
 </head>
 <body>
     <div class="portal-content" id="portalContent">
@@ -3264,7 +3264,6 @@
     </header>
 
     <main>
-        @include('partials.mes-patrio')
         <section class="hero" id="inicio" tabindex="-1">
             <div class="hero__inner container">
                 <div class="hero__copy">
@@ -3338,6 +3337,19 @@
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
+
+
+                        <a class="service-card service-card--lg" href="https://aplicacionesinternas.cecyteg.edu.mx/Evaluaciones/index.php?r=survey/index/sid/727498/lang/es-MX" target="_blank" rel="noopener">
+                            <span class="service-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9H21"/><path d="M8 14H16"/></svg>
+                            </span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">DIAGNOSTICO DE NECESIDADES DE CAPACITACIÓN, FORMACION y ACTUALIZACIÓN 2027</span>
+                                <span class="service-card__desc">Accede a la encuesta</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
+
                         <a class="service-card service-card--lg" href="http://10.10.10.10:8000/lanzador" target="_blank" rel="noopener">
                             <span class="service-card__icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9H21"/><path d="M8 14H16"/></svg>
@@ -3358,6 +3370,7 @@
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
+                        
                         <a class="service-card service-card--lg" href="https://sae.cecyteg.edu.mx/PortalAlumno/Account/Login" target="_blank" rel="noopener">
                             <span class="service-card__icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9H21"/><path d="M8 14H16"/></svg>
@@ -3369,6 +3382,21 @@
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
 
+
+
+
+
+                        
+                        <a class="service-card service-card--lg" href="http://10.10.10.10/croquis" target="_blank" rel="noopener">
+                            <span class="service-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9H21"/><path d="M8 14H16"/></svg>
+                            </span>
+                            <span class="service-card__body">
+                                <span class="service-card__title">Croquis deportiva</span>
+                                <span class="service-card__desc">Ubica los lugares donde se juegan los partidos</span>
+                            </span>
+                            <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
+                        </a>
             </div>
         </section>
 
@@ -3385,11 +3413,11 @@
                         <div class="services__grid">
 
                         
-                        <a class="service-card" href="http://10.10.10.10:8000/me?url=calificaciones" target="_blank" rel="noopener">
+                        <a class="service-card" href="http://10.10.10.10:8000/me?url=servicio" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2L14.4 8.5L21.5 9.2L16.2 13.9L17.8 21L12 17.3L6.2 21L7.8 13.9L2.5 9.2L9.6 8.5L12 2Z"/></svg></span>
                             <span class="service-card__body">
-                                <span class="service-card__title">Portal Estudiantil</span>
-                                <span class="service-card__desc">Consulta tus calificaciones</span>
+                                <span class="service-card__title">Servicio social</span>
+                                <span class="service-card__desc">Sube tus activiades de tercer parcial y reporte final</span>
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
@@ -3440,7 +3468,7 @@
                         </a>
 
                         
-                         <a class="service-card" href="https://www.ratatype.com/typing-test/es/" target="_blank" rel="noopener">
+                         <a class="service-card" href="https://rekarel.olimpiadadeinformatica.org.mx/" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8C4 6.9 4.9 6 6 6H18C19.1 6 20 6.9 20 8V15C20 16.1 19.1 17 18 17H15.5L14 19.5C13.6 20.17 12.4 20.17 12 19.5L10.5 17H6C4.9 17 4 16.1 4 15V8Z"/><circle cx="9" cy="11.5" r="1.5"/><circle cx="15" cy="11.5" r="1.5"/></svg></span>
                             <span class="service-card__body">
                                 <span class="service-card__title">Rekarel</span>
@@ -3580,7 +3608,7 @@
                         <div class="signature-visual">
                             <span class="signature-photo"><span class="signature-photo__crop"><img src="{{ asset('images/juanjo.webp') }}" alt="Retrato de Juanjo" width="896" height="1600" loading="lazy" decoding="async"></span></span>
                         </div>
-                        <figcaption><strong>Juanjosoft</strong><span class="signature-role">Backend</span></figcaption>
+                        <figcaption><strong>Juanjosoft</strong><span class="signature-role">Fullstack dev</span></figcaption>
                     </figure>
                    
                 </div>
