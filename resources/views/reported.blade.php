@@ -310,7 +310,10 @@
 
                 {{-- Fecha --}}
                 <td width="4%" align="center" class="peque">
-                    {{ $actividad->fecha_entrada }}
+                    {{ $actividad->fecha_entrada
+                        ? $actividad->fecha_entrada
+                            ->format('d-m-Y')
+                        : '' }}
                 </td>
 
                 {{-- Nombre del usuario --}}
@@ -340,15 +343,15 @@
 
                 {{-- Tipo de usuario --}}
                 <td width="3%" align="center">
-                  
+                    
                 </td>
 
                 <td width="3%" align="center">
-                    X
+                     {{ $actividad->asignatura!="Administrativa" ? "X":""  }}
                 </td>
 
                 <td width="3%" align="center">
-                  
+                  {{ $actividad->asignatura=="Administrativa" ? "X":""  }}
                 </td>
 
                 <td width="3%" align="center">
@@ -375,7 +378,7 @@
 
                 {{-- No. Equipo --}}
                 <td width="5%" align="center">
-                    {{ $registro->ip ?? '' }}
+                    {{ $actividad->equipo ?? '' }}
                 </td>
 
                 {{-- Observaciones --}}
