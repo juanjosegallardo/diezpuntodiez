@@ -85,6 +85,7 @@ class ScriptController extends Controller
 
         $contenido = view("script", [
             "claves" => $claves,
+            "parametros" => request()->query(),
         ])->render();
 
         return response($contenido)
