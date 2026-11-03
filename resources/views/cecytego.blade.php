@@ -25,6 +25,8 @@
             display: block;
         }
     </style>
+
+    <link rel="shortcut icon" href="images/cecytego.ico">
 </head>
 <body>
 
