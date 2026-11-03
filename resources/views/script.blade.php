@@ -1,5 +1,7 @@
 (async function(){
 
+
+alert("Paso 1");
     const campo = document.getElementById('id_quizpassword');
     const contenedor = document.getElementById('id_passwordheadercontainer');
     const busqueda = document.querySelector('#page-navbar li')?.innerText.trim();
