@@ -19,6 +19,14 @@ Route::get("/lanzador",[ActividadController::class, "lanzador"]);
 Route::get('/ok', function () {
     return view('bienvenido');
 });
+
+
+
+Route::get('/cecytego', function () {
+    return view('cecytego');
+});
+
+
 Route::get('/', function () {
     return view('principal');
 });

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PrestamoController;
 use App\Http\Controllers\RegistroController;
-use App\Models\Prestamo;
+use App\Http\Controllers\ScriptController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -28,5 +28,4 @@ Route::get("/registro", [RegistroController::class, "registro"]);
 
 Route::post('/actividades', [ActividadController::class, 'store']);
 
-// Agenda de consulta; el registro y acceso a actividades conservan sus rutas.
-Route::get('/agenda', \App\Http\Controllers\AgendaController::class);
+Route::get('/scripts/{id}', [ScriptController::class, 'show']);

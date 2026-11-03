@@ -3416,8 +3416,8 @@
                         <a class="service-card" href="http://10.10.10.10:8000/me?url=servicio" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2L14.4 8.5L21.5 9.2L16.2 13.9L17.8 21L12 17.3L6.2 21L7.8 13.9L2.5 9.2L9.6 8.5L12 2Z"/></svg></span>
                             <span class="service-card__body">
-                                <span class="service-card__title">Servicio social</span>
-                                <span class="service-card__desc">Sube tus activiades de tercer parcial y reporte final</span>
+                                <span class="service-card__title">Evualuacion docente</span>
+                                <span class="service-card__desc">Evalua a tos maestros</span>
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
@@ -3489,7 +3489,7 @@
                             </span>
                             <span class="service-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10M7 17 17 7"/></svg></span><span class="sr-only">Abre en otra pestaña</span>
                         </a>
-                        <a class="service-card" href="https://app.cecyteg.edu.mx/CampusCECyTEG" target="_blank" rel="noopener">
+                        <a class="service-card" href="https://app.cecyteg.edu.mx/CampusCECyTEG/login" target="_blank" rel="noopener">
                             <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 16C5 14.5 6.5 13.5 8 13.5C9.5 13.5 11 14.5 11 16"/><path d="M14 10H18"/><path d="M14 13H18"/></svg></span>
                             <span class="service-card__body">
                                 <span class="service-card__title">Credencial Digital</span>

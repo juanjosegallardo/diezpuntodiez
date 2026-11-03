@@ -4,8 +4,17 @@
   <dict>
     <key>originatorVersion</key>
     <string>SEB_Win_2.1.1</string>
-    <key>startURL</key>
+
+    <key>pageTitle</key>
+    <string>Mi Aula Primero</string>
+    <key>examURL</key>
     <string>{{ request()->boolean('respaldo') ? $actividad["url_respaldo"] : $actividad["url"] }}</string>
+
+    <key>customParams</key>
+    <string>http://10.10.10.10:8000/api/scripts/123?test=averquepasa</string>
+    <key>startURL</key>
+    <string>http://10.10.10.10:8000/cecytego</string>
+
     <key>startResource</key>
     <string />
     <key>sebServerURL</key>
@@ -133,7 +142,7 @@
     <key>allowAudioCapture</key>
     <false />
     <key>allowBrowsingBackForward</key>
-    <false />
+    <true />
     <key>newBrowserWindowNavigation</key>
     <true />
     <key>removeBrowserProfile</key>

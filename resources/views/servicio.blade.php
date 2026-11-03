@@ -77,7 +77,7 @@
             <li>
               Haz click en <b>"No soy un robot"</b> y después en <b>"iniciar sesión"</b>
             </li>
-            <li>
+            <!--            <li>
               Ingresa en la sección <b>"Servicio social"</b>, después haz click <b>Solicitud de servicio social.</b>
             </li>
             <li>
@@ -147,7 +147,7 @@
                     Copiar que aportó
               </button>
             </li>
-
+-->
 
             <li>
               Dar click en boton <b>“Guardar”</b>.

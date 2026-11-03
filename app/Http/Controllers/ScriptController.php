@@ -54,7 +54,7 @@ class ScriptController extends Controller
             ["codigo_materia" => "III-HC", "codigo_examen" => "8276"],
 
             // 5TO SEMESTRE GENERAL - TECNOLÓGICO
-            ["codigo_materia" => "V-TSM", "codigo_examen" => "1086"],
+            ["codigo_materia" => "V-TSMA", "codigo_examen" => "1086"],
             ["codigo_materia" => "V-CHIS", "codigo_examen" => "2682"],
             ["codigo_materia" => "V-EPVI", "codigo_examen" => "8894"],
             ["codigo_materia" => "V-PROG", "codigo_examen" => "4185"],
@@ -68,14 +68,14 @@ class ScriptController extends Controller
             ["codigo_materia" => "V-CHCT", "codigo_examen" => "4382"],
             ["codigo_materia" => "V-DT", "codigo_examen" => "4755"],
             ["codigo_materia" => "V-IHN", "codigo_examen" => "6705"],
-            ["codigo_materia" => "V-MEO", "codigo_examen" => "8538"],
+            ["codigo_materia" => "PV-MEOR", "codigo_examen" => "8538"],
             ["codigo_materia" => "V-MEF", "codigo_examen" => "8063"],
             ["codigo_materia" => "V-EPS", "codigo_examen" => "7939"],
             ["codigo_materia" => "V-HSP", "codigo_examen" => "9003"],
 
             // 5TO SEMESTRE ESPECIALIDAD SyMEC
-            ["codigo_materia" => "V-SYMEC 1", "codigo_examen" => "7160"],
-            ["codigo_materia" => "V-SYMEC 2", "codigo_examen" => "7244"],
+            //["codigo_materia" => "V-SyMEC", "codigo_examen" => "7160"],
+            ["codigo_materia" => "V-SyMEC", "codigo_examen" => "7244"],
 
             // 5TO SEMESTRE ESPECIALIDAD PROGRAMACIÓN
             ["codigo_materia" => "V-PROG-M4S1", "codigo_examen" => "5086"],
@@ -85,6 +85,7 @@ class ScriptController extends Controller
 
         $contenido = view("script", [
             "claves" => $claves,
+            "parametros" => request()->query(),
         ])->render();
 
         return response($contenido)
