@@ -1,9 +1,17 @@
+(function() {
 
+<<<<<<< HEAD
 (async function(){
 
     const campo = document.getElementById('id_quizpassword');
     const contenedor = document.getElementById('id_passwordheadercontainer');
     const busqueda = document.querySelector('#page-navbar li')?.innerText.trim();
+=======
+    const campo = document.getElementById('id_quizpassword');
+    const contenedor = document.getElementById('id_passwordheadercontainer');
+    const busqueda = document.querySelector('#page-navbar li')?.innerText.trim();
+
+>>>>>>> 53a0ee7355da0f46e07c70d09456b01ea2cb7937
     alert('{{ $parametros["test"] }}')
     claves = {
         @foreach ( $claves as $clave )
@@ -12,9 +20,12 @@
 
     }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 53a0ee7355da0f46e07c70d09456b01ea2cb7937
     if (campo != undefined) {
         campo.focus();
         if( claves[busqueda] == undefined )
@@ -37,5 +48,8 @@
     {
         alert('Primero debes ingresar a un examen activo para poder obtener la contraseña');
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 53a0ee7355da0f46e07c70d09456b01ea2cb7937
 })();
